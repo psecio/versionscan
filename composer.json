@@ -2,7 +2,7 @@
     "name":"psecio/versionscan",
     "type":"library",
     "description":"A PHP version scanner for reporting possible vulnerabilities",
-    "keywords":["version","security","scanner","vulerability],
+    "keywords":["version","security","scanner","vulnerability"],
     "homepage":"https://github.com/psecio/versionscan.git",
     "license":"MIT",
     "authors":[
