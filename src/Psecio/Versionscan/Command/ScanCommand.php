@@ -25,12 +25,12 @@ class ScanCommand extends Command
      *
      * @param  InputInterface $input Input object
      * @param  OutputInterface $output Output object
-     * @throws \Psecio\Iniscan\Exceptions\FormatNotFoundException
-     * @throws \Exception
-     * @return null
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $scan = new \Psecio\Versionscan\Scan();
+        $scan->execute();
+
         $output->writeLn('Running scan!');
     }
 }
