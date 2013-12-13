@@ -1,0 +1,30 @@
+{
+    "name":"psecio/versionscan",
+    "type":"library",
+    "description":"A PHP version scanner for reporting possible vulnerabilities",
+    "keywords":["version","security","scanner","vulerability],
+    "homepage":"https://github.com/psecio/versionscan.git",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Chris Cornutt",
+            "email":"ccornutt@phpdeveloper.org",
+            "homepage":"http://www.phpdeveloper.org/"
+        }
+    ],
+    "require":{
+        "php":">=5.3.1",
+        "symfony/console": "~2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Psecio": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "bin": [
+        "bin/versionscan"
+    ]
+}
