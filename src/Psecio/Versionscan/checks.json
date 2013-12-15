@@ -20,6 +20,13 @@
             "fixVersions": [
                 "5.4.18"
             ]
+        },
+        {
+            "cveid": "CVE-2013-2110",
+            "summary": "Heap-based buffer overflow in the php_quot_print_encode function in ext/standard/quot_print.c in PHP before 5.3.26 and 5.4.x before 5.4.16 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via a crafted argument to the quoted_printable_encode function.",
+            "fixVersions": [
+                "5.4.16", "5.3.26"
+            ]
         }
     ]
 }
