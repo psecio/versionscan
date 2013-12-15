@@ -28,8 +28,10 @@ class ScanCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $phpVersion = $input->getOption('php-version');
+
         $scan = new \Psecio\Versionscan\Scan();
-        $scan->execute();
+        $scan->execute($phpVersion);
 
         $output->writeLn(str_repeat('-', 50));
         $output->writeLn(
@@ -39,10 +41,12 @@ class ScanCommand extends Command
         );
         $output->writeLn(str_repeat('-', 50));
 
+        $failedCount = 0;
         foreach ($scan->getChecks() as $check) {
             if ($check->getResult() === true) {
                 $status = 'FAIL';
                 $color = 'red';
+                $failedCount++;
             } else {
                 $status = 'PASS';
                 $color = 'green';
@@ -55,7 +59,12 @@ class ScanCommand extends Command
             );
         }
 
-        $output->writeLn('Running scan!');
+        $output->writeLn(
+            "\nScan complete\n"
+            .str_repeat('-', 20)."\n"
+            ."Total checks: ".count($scan->getChecks())."\n"
+            ."<fg=red>Failures: ".$failedCount."</fg=red>\n"
+        );
     }
 }
 
