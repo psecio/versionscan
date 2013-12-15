@@ -1,9 +1,9 @@
 {
     "checks": [
         {
-            "CVEID": "CVE-2013-6420",
+            "cveid": "CVE-2013-6420",
             "summary": "PHP is an HTML-embedded scripting language commonly used with the Apache HTTP Server. A memory corruption flaw was found in the way the openssl_x509_parse() function of the PHP openssl extension parsed X.509 certificates. A remote attacker could use this flaw to provide a malicious self-signed certificate or a certificate signed by a trusted authority to a PHP application using the aforementioned function, causing the application to crash or, possibly, allow the attacker to execute arbitrary code with the privileges of the user running the PHP interpreter.",
-            "fix-versions": [
+            "fixVersions": [
                 "5.4.23", "5.3.28", "5.5.7"
             ]
         }
