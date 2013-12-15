@@ -31,6 +31,30 @@ class ScanCommand extends Command
         $scan = new \Psecio\Versionscan\Scan();
         $scan->execute();
 
+        $output->writeLn(str_repeat('-', 50));
+        $output->writeLn(
+            str_pad('Status', 15, ' ').' | '
+            . str_pad('CVE ID', 20, ' ')
+            .'| Summary'
+        );
+        $output->writeLn(str_repeat('-', 50));
+
+        foreach ($scan->getChecks() as $check) {
+            if ($check->getResult() === true) {
+                $status = 'FAIL';
+                $color = 'red';
+            } else {
+                $status = 'PASS';
+                $color = 'green';
+            }
+            $output->writeLn(
+                '<fg='.$color.'>'
+                .str_pad($status, 15, ' ').' | '
+                .str_pad($check->getCveId(), 20, ' ').'| '.$check->getSummary()
+                .'</fg='.$color.'>'
+            );
+        }
+
         $output->writeLn('Running scan!');
     }
 }
