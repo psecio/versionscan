@@ -89,11 +89,8 @@ class Scan
     public function setChecks(array $checks)
     {
         $this->checks = array();
-
         foreach ($checks as $index => $check) {
-            if (is_array($check)) {
-                $check = new \Psecio\Versionscan\Check($check);
-            }
+            $check = new \Psecio\Versionscan\Check($check);
             $this->checks[] = $check;
         }
     }
