@@ -15,7 +15,7 @@ Installation
 ```
 {
     "require": {
-        "psecio/iniscan": "dev-master"
+        "psecio/versionscan": "dev-master"
     }
 }
 ```
