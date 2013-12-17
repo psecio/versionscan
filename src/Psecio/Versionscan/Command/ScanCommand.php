@@ -14,6 +14,7 @@ class ScanCommand extends Command
             ->setDescription('Report back vulnerabilities for the current PHP version')
             ->setDefinition(array(
                 new InputOption('php-version', 'php-version', InputOption::VALUE_OPTIONAL, 'PHP version to check'),
+                new InputOption('fail-only', 'fail-only', InputOption::VALUE_NONE, 'Show only failures'),
             ))
             ->setHelp(
                 'Execute the scan on the current PHP version'
@@ -29,6 +30,7 @@ class ScanCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $phpVersion = $input->getOption('php-version');
+        $failOnly = $input->getOption('fail-only');
 
         $scan = new \Psecio\Versionscan\Scan();
         $scan->execute($phpVersion);
@@ -43,6 +45,10 @@ class ScanCommand extends Command
 
         $failedCount = 0;
         foreach ($scan->getChecks() as $check) {
+            if ($failOnly !== null && $check->getResult() !== true) {
+                continue;
+            }
+
             if ($check->getResult() === true) {
                 $status = 'FAIL';
                 $color = 'red';
