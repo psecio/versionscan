@@ -7,7 +7,23 @@ Versionscan is a tool for evaluating your currently installed PHP version
 and checking it against known CVEs and the versions they were fixed in
 to report back potential issues.
 
-#### Usage
+Installation
+------------
+
+### Using Composer
+
+```
+{
+    "require": {
+        "psecio/iniscan": "dev-master"
+    }
+}
+```
+
+The only current dependency is the Symfony console.
+
+Usage
+------------
 
 To run the scan against your current PHP version, use:
 
