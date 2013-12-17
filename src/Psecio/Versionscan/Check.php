@@ -122,6 +122,20 @@ class Check
     }
 
     /**
+     * Sort the versions from lowest to highest
+     *
+     * @param  array $versions Set of PHP version numbers
+     * @return arrya Sorted version numbers list
+     */
+    public function sortVersions($versions)
+    {
+        usort($versions, function($version1, $version2) {
+            return version_compare($version1, $version2);
+        });
+        return $versions;
+    }
+
+    /**
      * Check to see if the current installation is vulneravle to the issue
      *
      * @param string $phpVersion PHP version string
