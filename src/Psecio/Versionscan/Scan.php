@@ -24,10 +24,31 @@ class Scan
      */
     public function execute($phpVersion = null, $checks = null)
     {
-        $this->phpVersion = ($phpVersion === null) ? PHP_VERSION : $phpVersion;
+        $phpVersion = ($phpVersion === null) ? PHP_VERSION : $phpVersion;
+        $this->setVersion($phpVersion);
 
         // pull in the Scan checks
         $this->loadChecks($checks);
+    }
+
+    /**
+     * Set the current PHP version number
+     *
+     * @param string $version PHP version number
+     */
+    public function setVersion($version)
+    {
+        $this->phpVersion = $version;
+    }
+
+    /**
+     * Get the current PHP version setting
+     *
+     * @return string PHP version number
+     */
+    public function getVersion()
+    {
+        return $this->phpVersion;
     }
 
     /**
@@ -66,7 +87,7 @@ class Scan
     {
         foreach ($checks as $index => $check) {
             $check = new \Psecio\Versionscan\Check($check);
-            $result = $check->isVulnerable($this->phpVersion);
+            $result = $check->isVulnerable($this->getVersion());
             $check->setResult($result);
 
             $this->checks[] = $check;
