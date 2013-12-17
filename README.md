@@ -1,8 +1,10 @@
 versionscan
 ===========
 
-Versionscan is a tool for evaluating your currently installed PHP version 
-and checking it against known CVEs and the versions they were fixed in 
+[![Build Status](https://secure.travis-ci.org/psecio/versionscan.png?branch=master)](http://travis-ci.org/psecio/versionscan)
+
+Versionscan is a tool for evaluating your currently installed PHP version
+and checking it against known CVEs and the versions they were fixed in
 to report back potential issues.
 
 #### Usage
