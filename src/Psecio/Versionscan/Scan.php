@@ -24,11 +24,14 @@ class Scan
      */
     public function execute($phpVersion = null, $checks = null)
     {
-        $phpVersion = ($phpVersion === null) ? PHP_VERSION : $phpVersion;
+        if ($phpVersion === null) {
+            $phpVersion = PHP_VERSION;
+        }
         $this->setVersion($phpVersion);
 
         // pull in the Scan checks
         $this->loadChecks($checks);
+        $this->runChecks();
     }
 
     /**
@@ -85,11 +88,12 @@ class Scan
      */
     public function setChecks(array $checks)
     {
-        foreach ($checks as $index => $check) {
-            $check = new \Psecio\Versionscan\Check($check);
-            $result = $check->isVulnerable($this->getVersion());
-            $check->setResult($result);
+        $this->checks = array();
 
+        foreach ($checks as $index => $check) {
+            if (is_array($check)) {
+                $check = new \Psecio\Versionscan\Check($check);
+            }
             $this->checks[] = $check;
         }
     }
@@ -102,5 +106,18 @@ class Scan
     public function getChecks()
     {
         return $this->checks;
+    }
+
+    /**
+     * Execute the checks to get pass/fail status
+     */
+    public function runChecks()
+    {
+        $checks = $this->getChecks();
+        foreach ($checks as $index => $check) {
+            $result = $checks[$index]->isVulnerable($this->getVersion());
+            $checks[$index]->setResult($result);
+        }
+        $this->setChecks($checks);
     }
 }
