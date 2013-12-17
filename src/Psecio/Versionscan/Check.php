@@ -123,28 +123,37 @@ class Check
 
     /**
      * Check to see if the current installation is vulneravle to the issue
-     * 
+     *
      * @param string $phpVersion PHP version string
      * @return boolean Pass/fail status
      */
     public function isVulnerable($phpVersion)
     {
-        $versions = $this->getVersions();
+        $versions = $this->sortVersions($this->getVersions());
 
-        // look at the versions and find the major version
-        preg_match('/([0-9]+)\.([0-9]+)\.([0-9]+)/', $phpVersion, $matches);
-        if (count($matches) >= 2) {
-            $majorVersion = $matches[1].'.'.$matches[2];
-
-            // now match it against our $versions
-            foreach($versions as $version) {
-                if (strpos($version, $matches[1].'.'.$matches[2]) !== false) {
-                    if (version_compare($phpVersion, $version) === -1) {
-                        return true;
-                    }
-                }
-            }
+        // get the major version of the one we're using
+        if (preg_match('/([0-9]+\.[0-9]+)\.([0-9]+)?/', $phpVersion, $matches) === false) {
+            throw new \InvalidArgumentException('Could not determine major version');
         }
+        $majorVersion = $matches[1];
+
+        // check through the versions and see if any of them contain the major version
+        $found = array_values(
+            array_filter($versions, function($version) use ($majorVersion) {
+                return (strpos($version, $majorVersion) !== false) ? true : false;
+            })
+        );
+
+        if (count($found) > 0) {
+            // we found one that matches our version
+            $foundVersion = $found[0];
+            $check = version_compare($foundVersion, $phpVersion);
+            return ( $check === -1 || $check === 0) ? false : true;
+        } else {
+            // no matches found, lets just compare against the lowest one we can find
+            $check = version_compare($versions[0], $phpVersion);
+            return ($check === -1 || $check === 0) ? false : true;
+         }
         return false;
     }
 }
