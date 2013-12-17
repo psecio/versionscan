@@ -48,6 +48,20 @@
             "fixVersions": [
                 "5.3.11", "5.4.1"
             ]
+        },
+        {
+            "cveid": "CVE-2011-4718",
+            "summary": "Session fixation vulnerability in the Sessions subsystem in PHP before 5.5.2 allows remote attackers to hijack web sessions by specifying a session ID.",
+            "fixVersions": [
+                "5.5.2"
+            ]
+        },
+        {
+            "cveid": "CVE-2012-6113",
+            "summary": "The openssl_encrypt function in ext/openssl/openssl.c in PHP 5.3.9 through 5.3.13 does not initialize a certain variable, which allows remote attackers to obtain sensitive information from process memory by providing zero bytes of input data.",
+            "fixVersions": [
+                "5.3.13"
+            ]
         }
     ]
 }
