@@ -62,6 +62,27 @@
             "fixVersions": [
                 "5.3.13"
             ]
+        },
+        {
+            "cveid": "CVE-2013-1635",
+            "summary": "ext/soap/soap.c in PHP before 5.3.22 and 5.4.x before 5.4.13 does not validate the relationship between the soap.wsdl_cache_dir directive and the open_basedir directive, which allows remote attackers to bypass intended access restrictions by triggering the creation of cached SOAP WSDL files in an arbitrary directory.",
+            "fixVersions": [
+                "5.2.23", "5.4.13"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-1643",
+            "summary": "The SOAP parser in PHP before 5.3.23 and 5.4.x before 5.4.13 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions. NOTE: this vulnerability exists because of an incorrect fix for CVE-2013-1824.",
+            "fixVersions": [
+                "5.2.23", "5.4.13"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-1824",
+            "summary": "The SOAP parser in PHP before 5.3.22 and 5.4.x before 5.4.12 allows remote attackers to read arbitrary files via a SOAP WSDL file containing an XML external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue in the soap_xmlParseFile and soap_xmlParseMemory functions.",
+            "fixVersions": [
+                "5.3.22", "5.4.12"
+            ]
         }
     ]
 }
