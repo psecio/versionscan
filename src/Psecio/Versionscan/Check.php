@@ -30,7 +30,7 @@ class Check
 
     /**
      * Init the check object with optional check data
-     * 
+     *
      * @param type $checkData Set of data to assign to the check
      */
     public function __construct($checkData = null)
@@ -42,7 +42,7 @@ class Check
 
     /**
      * Assign the check data to the current object
-     * 
+     *
      * @param array $checkData Check data
      */
     public function setData($checkData)
@@ -57,7 +57,7 @@ class Check
 
     /**
      * Set the pass/fail result
-     * 
+     *
      * @param boolean $result Pass/fail result
      */
     public function setResult($result)
@@ -67,7 +67,7 @@ class Check
 
     /**
      * Get the current pass/fail result
-     * 
+     *
      * @return boolean Pass/fail result
      */
     public function getResult()
@@ -93,7 +93,7 @@ class Check
 
     /**
      * Get the fix versions of the check
-     * 
+     *
      * @return array Set of fix versions
      */
     public function getVersions()
@@ -103,7 +103,7 @@ class Check
 
     /**
      * Get the CVE ID for the check
-     * 
+     *
      * @return string CVE ID
      */
     public function getCveId()
@@ -113,7 +113,7 @@ class Check
 
     /**
      * Get the summary description of the check
-     * 
+     *
      * @return string Description
      */
     public function getSummary()
