@@ -16,6 +16,9 @@
         "php":">=5.3.1",
         "symfony/console": "~2.1"
     },
+    "require-dev": {
+        "kherge/box": "~2.4"
+    },
     "autoload": {
         "psr-0": {
             "Psecio": "src/"
