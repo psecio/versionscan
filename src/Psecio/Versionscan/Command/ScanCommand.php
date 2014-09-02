@@ -35,35 +35,37 @@ class ScanCommand extends Command
         $scan = new \Psecio\Versionscan\Scan();
         $scan->execute($phpVersion);
 
-        $output->writeLn(str_repeat('-', 50));
-        $output->writeLn(
-            str_pad('Status', 15, ' ').' | '
-            . str_pad('CVE ID', 20, ' ')
-            .'| Summary'
-        );
-        $output->writeLn(str_repeat('-', 50));
-
         $failedCount = 0;
+
+        $table = $this->getApplication()->getHelperSet()->get('table');
+        $table->setHeaders(array('Status', 'CVE ID', 'Risk', 'Summary'));
+        
+        $data = array();
+        $column = 100;
+
         foreach ($scan->getChecks() as $check) {
             if ($failOnly !== null && $check->getResult() !== true) {
                 continue;
             }
 
             if ($check->getResult() === true) {
-                $status = 'FAIL';
-                $color = 'red';
+                $status = '<fg=red>FAIL</fg=red>';
                 $failedCount++;
             } else {
-                $status = 'PASS';
-                $color = 'green';
+                $status = '<fg=green>PASS</fg=green>';
             }
-            $output->writeLn(
-                '<fg='.$color.'>'
-                .str_pad($status, 15, ' ').' | '
-                .str_pad($check->getCveId(), 20, ' ').'| '.$check->getSummary()
-                .'</fg='.$color.'>'
+
+            $summary = (strlen($check->getSummary()) > $column ? substr($check->getSummary(), 0, $column-3) . '...' : $check->getSummary());
+            $data[] = array(
+                $status,
+                $check->getCveId(),
+                $check->getThreat(),
+                $summary,
             );
         }
+
+        $table->setRows($data);
+        $table->render($output);
 
         $output->writeLn(
             "\nScan complete\n"

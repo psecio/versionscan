@@ -17,6 +17,12 @@ class Check
     private $summary = '';
 
     /**
+     * The threat of the vulnerability (out of 10)
+     * @var int
+     */
+    private $threat = 0;
+
+    /**
      * Set of versions when the issue was fixed
      * @var array
      */
@@ -99,6 +105,16 @@ class Check
     public function getVersions()
     {
         return $this->fixVersions;
+    }
+
+    /**
+     * Get the threat for the check
+     *
+     * @return integer threat
+     */
+    public function getThreat()
+    {
+        return $this->threat;
     }
 
     /**
