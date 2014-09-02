@@ -15,6 +15,7 @@ class ScanCommand extends Command
             ->setDefinition(array(
                 new InputOption('php-version', 'php-version', InputOption::VALUE_OPTIONAL, 'PHP version to check'),
                 new InputOption('fail-only', 'fail-only', InputOption::VALUE_NONE, 'Show only failures'),
+                new InputOption('sort', 'sort', InputOption::VALUE_OPTIONAL, 'Sort Results By Column (cve, risk)')
             ))
             ->setHelp(
                 'Execute the scan on the current PHP version'
@@ -31,15 +32,18 @@ class ScanCommand extends Command
     {
         $phpVersion = $input->getOption('php-version');
         $failOnly = $input->getOption('fail-only');
+        $sort = $input->getOption('sort');
 
         $scan = new \Psecio\Versionscan\Scan();
         $scan->execute($phpVersion);
+
+        $output->writeLn('Executing against version: '.$scan->getVersion());
 
         $failedCount = 0;
 
         $table = $this->getApplication()->getHelperSet()->get('table');
         $table->setHeaders(array('Status', 'CVE ID', 'Risk', 'Summary'));
-        
+
         $data = array();
         $column = 100;
 
@@ -62,6 +66,24 @@ class ScanCommand extends Command
                 $check->getThreat(),
                 $summary,
             );
+        }
+
+        if ($sort !== false) {
+            usort($data, function($row1, $row2) use ($sort) {
+                $sort = strtolower($sort);
+
+                if ($sort == 'cve') {
+                    $r1 = str_replace(array('CVE', '-'), '', $row1[1]);
+                    $r2 = str_replace(array('CVE', '-'), '', $row2[1]);
+
+                    return ($r1 > $r2) ? -1 : 1;
+                } elseif ($sort == 'risk') {
+                    $r1 = (integer)$row1[2];
+                    $r2 = (integer)$row2[2];
+
+                    return ($r1 > $r2) ? -1 : 1;
+                }
+            });
         }
 
         $table->setRows($data);
