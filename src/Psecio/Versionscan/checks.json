@@ -1,6 +1,174 @@
 {
     "checks": [
         {
+            "cveid": "CVE-2014-5120",
+            "summary": "gd_ctx.c in the GD component in PHP 5.4.x before 5.4.32 and 5.5.x before 5.5.16 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to overwrite arbitrary files via crafted input to an application that calls the (1) imagegd, (2) imagegd2, (3) imagegif, (4) imagejpeg, (5) imagepng, (6) imagewbmp, or (7) imagewebp function.",
+            "fixVersions": [
+                "5.4.32", "5.5.16"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-4721",
+            "summary": "The phpinfo implementation in ext\/standard\/info.c in PHP before 5.4.30 and 5.5.x before 5.5.14 does not ensure use of the string data type for the PHP_AUTH_PW, PHP_AUTH_TYPE, PHP_AUTH_USER, and PHP_SELF variables, which might allow context-dependent attackers to obtain sensitive information from process memory by using the integer data type with crafted values, related to a \"type confusion\" vulnerability, as demonstrated by reading a private SSL key in an Apache HTTP Server web-hosting environment with mod_ssl and a PHP 5.3.x mod_php.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-4698",
+            "summary": "Use-after-free vulnerability in ext\/spl\/spl_array.c in the SPL component in PHP through 5.5.14 allows context-dependent attackers to cause a denial of service or possibly have unspecified other impact via crafted ArrayIterator usage within applications in certain web-hosting environments.",
+            "fixVersions": [
+                "5.4.15"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-4670",
+            "summary": "Use-after-free vulnerability in ext\/spl\/spl_dllist.c in the SPL component in PHP through 5.5.14 allows context-dependent attackers to cause a denial of service or possibly have unspecified other impact via crafted iterator usage within applications in certain web-hosting environments.",
+            "fixVersions": [
+                "5.4.15"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-4049",
+            "summary": "Heap-based buffer overflow in the php_parserr function in ext\/standard\/dns.c in PHP 5.6.0beta4 and earlier allows remote servers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted DNS TXT record, related to the dns_get_record function.",
+            "fixVersions": [
+                "5.6.0rc1"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3981",
+            "summary": "acinclude.m4, as used in the configure script in PHP 5.5.13 and earlier, allows local users to overwrite arbitrary files via a symlink attack on the \/tmp\/phpglibccheck file.",
+            "fixVersions": [
+                "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3597",
+            "summary": "Multiple buffer overflows in the php_parserr function in ext\/standard\/dns.c in PHP before 5.4.32 and 5.5.x before 5.5.16 allow remote DNS servers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted DNS record, related to the dns_get_record function and the dn_expand function. NOTE: this issue exists because of an incomplete fix for CVE-2014-4049.",
+            "fixVersions": [
+                "5.4.32", "5.5.16"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3587",
+            "summary": "Integer overflow in the cdf_read_property_info function in cdf.c in file through 5.19, as used in the Fileinfo component in PHP before 5.4.32 and 5.5.x before 5.5.16, allows remote attackers to cause a denial of service (application crash) via a crafted CDF file. NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1571.",
+            "fixVersions": [
+                "5.4.32", "5.5.16"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3515",
+            "summary": "The SPL component in PHP before 5.4.30 and 5.5.x before 5.5.14 incorrectly anticipates that certain data structures will have the array data type after unserialization, which allows remote attackers to execute arbitrary code via a crafted string that triggers use of a Hashtable destructor, related to \"type confusion\" issues in (1) ArrayObject and (2) SPLObjectStorage.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3487",
+            "summary": "The cdf_read_property_info function in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate a stream offset, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3480",
+            "summary": "The cdf_count_chain function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, does not properly validate sector-count data, which allows remote attackers to cause a denial of service (application crash) via a crafted CDF file.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3479",
+            "summary": "The cdf_check_stream_offset function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, relies on incorrect sector-size data, which allows remote attackers to cause a denial of service (application crash) via a crafted stream offset in a CDF file.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-3478",
+            "summary": "Buffer overflow in the mconvert function in softmagic.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, allows remote attackers to cause a denial of service (application crash) via a crafted Pascal string in a FILE_PSTRING conversion.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-2497",
+            "summary": "The gdImageCreateFromXpm function in gdxpm.c in libgd, as used in PHP 5.4.26 and earlier, allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a crafted color table in an XPM file.",
+            "fixVersions": [
+                "5.4.27"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-2020",
+            "summary": "ext\/gd\/gd.c in PHP 5.5.x before 5.5.9 does not check data types, which might allow remote attackers to obtain sensitive information by using a (1) string or (2) array data type in place of a numeric data type, as demonstrated by an imagecrop function call with a string for the x dimension value, a different vulnerability than CVE-2013-7226.",
+            "fixVersions": [
+                "5.5.9"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-0238",
+            "summary": "The cdf_read_property_info function in cdf.c in the Fileinfo component in PHP before 5.4.29 and 5.5.x before 5.5.13 allows remote attackers to cause a denial of service (infinite loop or out-of-bounds memory access) via a vector that (1) has zero length or (2) is too long.",
+            "fixVersions": [
+                "5.4.29", "5.5.13"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-0237",
+            "summary": "The cdf_unpack_summary_info function in cdf.c in the Fileinfo component in PHP before 5.4.29 and 5.5.x before 5.5.13 allows remote attackers to cause a denial of service (performance degradation) by triggering many file_printf calls.",
+            "fixVersions": [
+                "5.4.29", "5.5.13"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-0207",
+            "summary": "The cdf_read_short_sector function in cdf.c in file before 5.19, as used in the Fileinfo component in PHP before 5.4.30 and 5.5.x before 5.5.14, allows remote attackers to cause a denial of service (assertion failure and application exit) via a crafted CDF file.",
+            "fixVersions": [
+                "5.4.30", "5.5.14"
+            ]
+        },
+        {
+            "cveid": "CVE-2014-0185",
+            "summary": "sapi\/fpm\/fpm\/fpm_unix.c in the FastCGI Process Manager (FPM) in PHP before 5.4.28 and 5.5.x before 5.5.12 uses 0666 permissions for the UNIX socket, which allows local users to gain privileges via a crafted FastCGI client.",
+            "fixVersions": [
+                "5.4.28", "5.5.12"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-7328",
+            "summary": "Multiple integer signedness errors in the gdImageCrop function in ext\/gd\/gd.c in PHP 5.5.x before 5.5.9 allow remote attackers to cause a denial of service (application crash) or obtain sensitive information via an imagecrop function call with a negative value for the (1) x or (2) y dimension, a different vulnerability than CVE-2013-7226.",
+            "fixVersions": [
+                "5.5.9"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-7327",
+            "summary": "The gdImageCrop function in ext\/gd\/gd.c in PHP 5.5.x before 5.5.9 does not check return values, which allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via invalid imagecrop arguments that lead to use of a NULL pointer as a return value, a different vulnerability than CVE-2013-7226.",
+            "fixVersions": [
+                "5.5.9"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-7226",
+            "summary": "Integer overflow in the gdImageCrop function in ext\/gd\/gd.c in PHP 5.5.x before 5.5.9 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact via an imagecrop function call with a large x dimension value, leading to a heap-based buffer overflow.",
+            "fixVersions": [
+                "5.5.9"
+            ]
+        },
+        {
+            "cveid": "CVE-2012-1171",
+            "summary": "The libxml RSHUTDOWN function in PHP 5.x allows remote attackers to bypass the open_basedir protection mechanism and read arbitrary files via vectors involving a stream_close method call during use of a custom stream wrapper.",
+            "fixVersions": [
+                "5.3.28", "5.4.24", "5.5.7"
+            ]
+        },
+        {
+            "cveid": "CVE-2013-6712",
+            "summary": "The scan function in ext/date/lib/parse_iso_intervals.c in PHP through 5.5.6 does not properly restrict creation of DateInterval objects, which might allow remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted interval specification. ",
+            "fixVersions": [
+                "5.5.7"
+            ]
+        },
+        {
             "cveid": "CVE-2013-6420",
             "summary": "PHP is an HTML-embedded scripting language commonly used with the Apache HTTP Server. A memory corruption flaw was found in the way the openssl_x509_parse() function of the PHP openssl extension parsed X.509 certificates. A remote attacker could use this flaw to provide a malicious self-signed certificate or a certificate signed by a trusted authority to a PHP application using the aforementioned function, causing the application to crash or, possibly, allow the attacker to execute arbitrary code with the privileges of the user running the PHP interpreter.",
             "fixVersions": [
