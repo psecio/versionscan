@@ -10,7 +10,7 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 $output = new ConsoleOutput();
-$app = new Application('INI Scan', '0.1');
+$app = new Application('PHP Version Security Scanner', '0.1');
 $app->addCommands(array(
     new \Psecio\Versionscan\Command\ScanCommand(),
 ));
