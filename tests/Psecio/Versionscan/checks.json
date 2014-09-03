@@ -1,0 +1,13 @@
+{
+    "checks": [
+        {
+            "threat": "6.4",
+            "cveid": "CVE-2014-5120",
+            "summary": "gd_ctx.c in the GD component in PHP 5.4.x before 5.4.32 and 5.5.x before 5.5.16 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to overwrite arbitrary files via crafted input to an application that calls the (1) imagegd, (2) imagegd2, (3) imagegif, (4) imagejpeg, (5) imagepng, (6) imagewbmp, or (7) imagewebp function. \nPublish Date : 2014-08-22 Last Update Date : 2014-08-27",
+            "fixVersions": [
+                "5.4.32",
+                "5.5.16"
+            ]
+        }
+    ]
+}
