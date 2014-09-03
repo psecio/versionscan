@@ -47,7 +47,7 @@ class CheckTest extends \PHPUnit_Framework_TestCase
     /**
      * Check the isVulnerable check
      */
-    public function testIsVulnerable()
+    public function testIsVulnerableWorksCorrectly()
     {
         $this->check->setData(array(
             'fixVersions' => array(
@@ -57,6 +57,12 @@ class CheckTest extends \PHPUnit_Framework_TestCase
         ));
 
         $this->assertTrue($this->check->isVulnerable('5.4.31'));
+        // Even though 5.4.33 is < 5.5.16, it still passes because there is a branch match
+        $this->assertFalse($this->check->isVulnerable('5.4.33'));
+        $this->assertFalse($this->check->isVulnerable('5.5.16'));
+        // Even though 5.3.0 is < 5.5.16, it still passes this vulnerability doesn't affect this branch
+        $this->assertFalse($this->check->isVulnerable('5.3.0'));
+        $this->assertFalse($this->check->isVulnerable('5.6.0'));
     }
 
     /**
