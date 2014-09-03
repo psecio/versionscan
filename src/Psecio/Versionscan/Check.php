@@ -179,11 +179,11 @@ class Check
             $foundVersion = $found[0];
             $check = version_compare($foundVersion, $phpVersion);
             return ( $check === -1 || $check === 0) ? false : true;
-        } else {
-            // no matches found, lets just compare against the lowest one we can find
-            $check = version_compare($versions[0], $phpVersion);
-            return ($check === -1 || $check === 0) ? false : true;
-         }
+        }
+        
+        // No matches found, then we can assume that this version is safe. Minor versions
+        // might have bug fixes for bugs found in a higher major versions or might not
+        // have the vulnerability at all.
         return false;
     }
 }
