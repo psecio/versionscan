@@ -187,4 +187,19 @@ class Check
          }
         return false;
     }
+
+    /**
+     * Return the check information as an array
+     *
+     * @return array Check details
+     */
+    public function toArray()
+    {
+        return array(
+            'threat' => $this->getThreat(),
+            'cveid' => $this->getCveId(),
+            'summary' => $this->getSummary(),
+            'fixVersions' => $this->getVersions()
+        );
+    }
 }
