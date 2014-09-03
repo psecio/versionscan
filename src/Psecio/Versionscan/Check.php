@@ -100,11 +100,12 @@ class Check
     /**
      * Get the fix versions of the check
      *
+     * @param string $type Type
      * @return array Set of fix versions
      */
-    public function getVersions()
+    public function getVersions($type = 'base')
     {
-        return $this->fixVersions;
+        return $this->fixVersions->$type;
     }
 
     /**
