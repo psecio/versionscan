@@ -33,12 +33,42 @@ The script will check the `PHP_VERSION` for the current instance and
 generate the pass/fail results. The output looks similar to:
 
 ```
---------------------------------------------------
-Status          | CVE ID              | Summary
---------------------------------------------------
-PASS            | CVE-2013-6420       | PHP is an HTML-embedded scripting language commonly used with the Apache HTTP Server. A memory corruption flaw was found in the way the openssl_x509_parse() function of the PHP openssl extension parsed X.509 certificates. A remote attacker could use this flaw to provide a malicious self-signed certificate or a certificate signed by a trusted authority to a PHP application using the aforementioned function, causing the application to crash or, possibly, allow the attacker to execute arbitrary code with the privileges of the user running the PHP interpreter.
-PASS            | CVE-2013-4248       | The openssl_x509_parse function in openssl.c in the OpenSSL module in PHP before 5.4.18 and 5.5.x before 5.5.2 does not properly handle a '\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.
+Executing against version: 5.4.24
++--------+---------------+------+------------------------------------------------------------------------------------------------------+
+| Status | CVE ID        | Risk | Summary                                                                                              |
++--------+---------------+------+------------------------------------------------------------------------------------------------------+
+| FAIL   | CVE-2014-3597 | 6.8  | Multiple buffer overflows in the php_parserr function in ext/standard/dns.c in PHP before 5.4.32 ... |
+| FAIL   | CVE-2014-3587 | 4.3  | Integer overflow in the cdf_read_property_info function in cdf.c in file through 5.19, as used in... |
 ```
 
 Results will be reported back colorized as well to easily show the pass/fail
 of the check.
+
+Parameters
+------------
+
+There are several parameters that can be given to the tool to configure its scans and results:
+
+### PHP Version
+
+If you'd like to define a PHP version to check other than the one the script finds itself, you can use the `php-version` parameter:
+
+```
+bin/versionscan scan --php-version=4.3.2
+```
+
+### Report Only Failures
+
+You can also tell the versionscan to only report back the failures and not the passing tests:
+
+```
+bin/versionscan scan --fail-only
+```
+
+### Sorting results
+
+You can also sort the results either by the CVE ID or by severity (risk rating), with the `sort` parameter
+and either the "cve" or "risk" value:
+
+```
+bin/versionscan scan --sort=risk

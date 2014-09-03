@@ -162,7 +162,7 @@ class Check
         $versions = $this->sortVersions($this->getVersions());
 
         // get the major version of the one we're using
-        if (preg_match('/([0-9]+\.[0-9]+)\.([0-9]+)?/', $phpVersion, $matches) === false) {
+        if (preg_match('/([0-9]+\.[0-9]+)\.?([0-9]+)?/', $phpVersion, $matches) === false) {
             throw new \InvalidArgumentException('Could not determine major version');
         }
         $majorVersion = $matches[1];
