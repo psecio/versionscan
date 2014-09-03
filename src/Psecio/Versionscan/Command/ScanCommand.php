@@ -59,7 +59,13 @@ class ScanCommand extends Command
                 $status = '<fg=green>PASS</fg=green>';
             }
 
-            $summary = (strlen($check->getSummary()) > $column ? substr($check->getSummary(), 0, $column-3) . '...' : $check->getSummary());
+            if ($output->isVerbose() === true) {
+                $summary = trim($check->getSummary());
+            } else {
+                $summary = (strlen($check->getSummary()) > $column
+                    ? substr($check->getSummary(), 0, $column-3) . '...' : $check->getSummary());
+            }
+
             $data[] = array(
                 $status,
                 $check->getCveId(),
