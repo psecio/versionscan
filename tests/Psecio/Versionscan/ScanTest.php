@@ -40,8 +40,8 @@ class ScanTest extends \PHPUnit_Framework_TestCase
             array(
                 'cveid' => 'CVE-1234',
                 'summary' => 'This is a test',
-                'fixVersions' => array(
-                    '5.4.0'
+                'fixVersions' => (object)array(
+                    'base' => array('5.4.0')
                 )
             )
         );
@@ -102,7 +102,9 @@ class ScanTest extends \PHPUnit_Framework_TestCase
             array(
                 'cveid' => 'CVE-1234',
                 'summary' => 'This is a test',
-                'fixVersions' => array('5.1.1')
+                'fixVersions' => (object)array(
+                    'base' => array('5.1.1')
+                )
             )
         );
         $phpVersion = '5.4.1';
