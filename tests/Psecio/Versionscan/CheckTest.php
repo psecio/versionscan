@@ -20,9 +20,8 @@ class CheckTest extends \PHPUnit_Framework_TestCase
             'threat' => '6.4',
             'cveid' => 'CVE-2014-5120',
             'summary' => 'gd_ctx.c in the GD component in PHP 5.4.x before 5.4.32 and 5.5.x before 5.5.16 does not ensure that pathnames lack %00 sequences, which might allow remote attackers to overwrite arbitrary files via crafted input to an application that calls the (1) imagegd, (2) imagegd2, (3) imagegif, (4) imagejpeg, (5) imagepng, (6) imagewbmp, or (7) imagewebp function. \nPublish Date : 2014-08-22 Last Update Date : 2014-08-27',
-            'fixVersions' => array(
-                '5.4.32',
-                '5.5.16'
+            'fixVersions' => (object)array(
+                'base' => array('5.4.32', '5.5.16')
             )
         );
         $this->check->setData($data);
@@ -30,7 +29,7 @@ class CheckTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($data['threat'], $this->check->getThreat());
         $this->assertSame($data['cveid'], $this->check->getCveId());
         $this->assertSame($data['summary'], $this->check->getSummary());
-        $this->assertSame($data['fixVersions'], $this->check->getVersions());
+        $this->assertSame($data['fixVersions']->base, $this->check->getVersions());
     }
 
     /**
@@ -50,9 +49,8 @@ class CheckTest extends \PHPUnit_Framework_TestCase
     public function testIsVulnerableWorksCorrectly()
     {
         $this->check->setData(array(
-            'fixVersions' => array(
-                '5.4.32',
-                '5.5.16'
+            'fixVersions' => (object)array(
+                'base' => array('5.4.32', '5.5.16')
             )
         ));
 
