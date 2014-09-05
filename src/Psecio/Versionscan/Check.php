@@ -2,6 +2,8 @@
 
 namespace Psecio\Versionscan;
 
+use \InvalidArgumentException;
+
 class Check
 {
     /**
@@ -160,15 +162,14 @@ class Check
      */
     public function isVulnerable($phpVersion)
     {
-        $versions = $this->sortVersions($this->getVersions());
-
         // get the major version of the one we're using
-        if (preg_match('/([0-9]+\.[0-9]+)\.?([0-9]+)?/', $phpVersion, $matches) === false) {
-            throw new \InvalidArgumentException('Could not determine major version');
+        if (!preg_match('/([0-9]+\.[0-9]+)\.?([0-9]+)?/', $phpVersion, $matches)) {
+            throw new InvalidArgumentException('Could not determine major version');
         }
         $majorVersion = $matches[1];
 
         // check through the versions and see if any of them contain the major version
+        $versions = $this->sortVersions($this->getVersions());
         $found = array_values(
             array_filter($versions, function($version) use ($majorVersion) {
                 return (strpos($version, $majorVersion) !== false) ? true : false;
@@ -180,11 +181,11 @@ class Check
             $foundVersion = $found[0];
             $check = version_compare($foundVersion, $phpVersion);
             return ( $check === -1 || $check === 0) ? false : true;
-        } else {
-            // no matches found, lets just compare against the lowest one we can find
-            $check = version_compare($versions[0], $phpVersion);
-            return ($check === -1 || $check === 0) ? false : true;
-         }
+        }
+        
+        // No matches found, then we can assume that this version is safe. Minor versions
+        // might have bug fixes for bugs found in a higher major versions or might not
+        // have the vulnerability at all.
         return false;
     }
 

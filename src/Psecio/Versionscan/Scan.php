@@ -2,6 +2,8 @@
 
 namespace Psecio\Versionscan;
 
+use \Exception;
+
 class Scan
 {
     /**
@@ -15,6 +17,20 @@ class Scan
      * @var string
      */
     private $phpVersion = null;
+
+    /**
+     * File to load checks from
+     * @var string
+     */
+    private $checkFile;
+
+    /**
+     * Setup checks file path
+     */
+    public function __construct()
+    {
+        $this->checkFile = __DIR__.'/checks.json';
+    }
 
     /**
      * Execute the scan
@@ -55,6 +71,16 @@ class Scan
     }
 
     /**
+     * Set check file
+     *
+     * @param string $checkFile File to use for scan rules
+     */
+    public function setCheckFile($checkFile)
+    {
+        $this->checkFile = $checkFile;
+    }
+
+    /**
      * Load the checks
      *     If null is given as input, it loads from the file
      *     If an array is given, it uses that data
@@ -66,15 +92,14 @@ class Scan
     {
         if ($checks === null) {
             // pull in the Scan checks
-            $path = __DIR__.'/checks.json';
-            if (is_file($path)) {
-                $checks = @json_decode(file_get_contents($path));
-                if ($checks === false) {
+            if (is_file($this->checkFile)) {
+                $checks = @json_decode(file_get_contents($this->checkFile));
+                if (!$checks) {
                     throw new Exception('Invalid check configuration');
                 }
                 $this->setChecks($checks->checks);
             } else {
-                throw new Exception('Could not load check file '.$path);
+                throw new Exception('Could not load check file '.$this->checkFile);
             }
         } elseif (is_array($checks)) {
             $this->setChecks($checks);
