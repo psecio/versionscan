@@ -9,6 +9,12 @@ set_time_limit(0);
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
+$version = '@package_version@';
+if (strpos($version, 'package_version') !== false)
+{
+	$version = 'src';
+}
+
 $output = new ConsoleOutput();
 $app = new Application('PHP Version Security Scanner', '0.1');
 $app->addCommands(array(
