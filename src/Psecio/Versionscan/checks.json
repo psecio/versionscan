@@ -3796,6 +3796,42 @@
                     "5.5.16"
                 ]
             }
+        },
+        {
+            "threat": "0.0",
+            "cveid": "CVE-2014-3669",
+            "summary": "Integer overflow in unserialize() (32-bits only)",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "0.0",
+            "cveid": "CVE-2014-3670",
+            "summary": "Heap corruption in exif_thumbnail()",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "0.0",
+            "cveid": "CVE-2014-3668",
+            "summary": "Global buffer overflow in mkgmtime() function",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
         }
     ]
 }
