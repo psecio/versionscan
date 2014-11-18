@@ -3796,6 +3796,53 @@
                     "5.5.16"
                 ]
             }
-        }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-3669",
+            "summary": "Integer overflow in the object_custom function in ext/standard/var_unserializer.c in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via an argument to the unserialize function that triggers calculation of a large length value.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2014-3670",
+            "summary": "The exif_ifd_make_value function in exif.c in the EXIF extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 operates on floating-point arrays incorrectly, which allows remote attackers to cause a denial of service (heap memory corruption and application crash) or possibly execute arbitrary code via a crafted JPEG image with TIFF thumbnail data that is improperly handled by the exif_thumbnail function.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-3668",
+            "summary": "Buffer overflow in the date_from_ISO8601 function in the mkgmtime implementation in libxmlrpc/xmlrpc.c in the XMLRPC extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) via (1) a crafted first argument to the xmlrpc_set_type function or (2) a crafted argument to the xmlrpc_decode function, related to an out-of-bounds read operation.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-3710",
+            "summary": "The donote function in readelf.c in file through 5.20, as used in the Fileinfo component in PHP 5.4.34, does not ensure that sufficient note headers are present, which allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted ELF file.",
+            "fixVersions": {
+                "base": [
+                    "5.4.35",
+                    "5.5.19"
+                ]
+            }
+        },
     ]
 }
