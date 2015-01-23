@@ -3867,6 +3867,42 @@
                     "5.4.37"
                 ]
             }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2015-0231",
+            "summary": "Use After Free Vulnerability in PHP's unserialize",
+            "fixVersions": {
+                "base": [
+                    "5.4.37",
+                    "5.6.5",
+                    "5.5.21"
+                ]
+            }
+        },
+        {
+            "threat": "6.4",
+            "cveid": "CVE-2014-9427",
+            "summary": "sapi/cgi/cgi_main.c in the CGI component in PHP through 5.4.36, 5.5.x through 5.5.20, and 5.6.x through 5.6.4, when mmap is used to read a .php file, does not properly consider the mapping's length during processing of an invalid file that begins with a # character and lacks a newline character, which causes an out-of-bounds read and might (1) allow remote attackers to obtain sensitive information from php-cgi process memory by leveraging the ability to upload a .php file or (2) trigger unexpected code execution if a valid PHP script is present in memory locations adjacent to the mapping.",
+            "fixVersions": {
+                "base": [
+                    "5.4.37",
+                    "5.6.5",
+                    "5.5.21"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2015-0232",
+            "summary": "Free called on unitialized pointer in EXIF",
+            "fixVersions": {
+                "base": [
+                    "5.4.37",
+                    "5.6.5",
+                    "5.5.21"
+                ]
+            }
         }
     ]
 }
