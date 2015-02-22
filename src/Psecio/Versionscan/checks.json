@@ -3869,7 +3869,7 @@
             }
         },
         {
-            "threat": "6.4",
+            "threat": "7.5",
             "cveid": "CVE-2015-0231",
             "summary": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate numerical keys within the serialized properties of an object. NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-8142.",
             "fixVersions": {
@@ -3893,7 +3893,7 @@
             }
         },
         {
-            "threat": "6.4",
+            "threat": "6.8",
             "cveid": "CVE-2015-0232",
             "summary": "The exif_process_unicode function in ext/exif/exif.c in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code or cause a denial of service (uninitialized pointer free and application crash) via crafted EXIF data in a JPEG image.",
             "fixVersions": {
@@ -3925,6 +3925,17 @@
                     "5.6.6",
                     "5.5.22",
                     "5.4.38"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-9425",
+            "summary": "Double free vulnerability in the zend_ts_hash_graceful_destroy function in zend_ts_hash.c in the Zend Engine in PHP through 5.5.20 and 5.6.x through 5.6.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
+            "fixVersions": {
+                "base": [
+                    "5.6.5",
+                    "5.5.21"
                 ]
             }
         }
