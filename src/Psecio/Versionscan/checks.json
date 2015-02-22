@@ -3903,6 +3903,30 @@
                     "5.5.21"
                 ]
             }
+        },
+        {
+            "threat": "10.0",
+            "cveid": "CVE-2015-0235",
+            "summary": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka 'GHOST.'",
+            "fixVersions": {
+                "base": [
+                    "5.5.6",
+                    "5.4.38",
+                    "5.6.6"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2015-0273",
+            "summary": "Use after free vulnerability in unserialize() with DateTimeZone",
+            "fixVersions": {
+                "base": [
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.38"
+                ]
+            }
         }
     ]
 }
