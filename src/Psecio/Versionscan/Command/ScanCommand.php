@@ -5,6 +5,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Psecio\Versionscan\Exceptions\FormatNotFoundException;
 
 class ScanCommand extends Command
 {
@@ -15,7 +16,9 @@ class ScanCommand extends Command
             ->setDefinition(array(
                 new InputOption('php-version', 'php-version', InputOption::VALUE_OPTIONAL, 'PHP version to check'),
                 new InputOption('fail-only', 'fail-only', InputOption::VALUE_NONE, 'Show only failures'),
-                new InputOption('sort', 'sort', InputOption::VALUE_OPTIONAL, 'Sort Results By Column (cve, risk)')
+                new InputOption('sort', 'sort', InputOption::VALUE_OPTIONAL, 'Sort Results By Column (cve, risk)'),
+                new InputOption('format', 'format', InputOption::VALUE_OPTIONAL, 'Output format'),
+                new InputOption('output', 'output', InputOption::VALUE_OPTIONAL, 'Directory for file output types'),
             ))
             ->setHelp(
                 'Execute the scan on the current PHP version'
@@ -33,75 +36,70 @@ class ScanCommand extends Command
         $phpVersion = $input->getOption('php-version');
         $failOnly = $input->getOption('fail-only');
         $sort = $input->getOption('sort');
+        $format = $input->getOption('format');
+        $outputPath = $input->getOption('output');
+
+        if ($format === 'html' && $outputPath === null) {
+            throw new \InvalidArgumentException('Output path must be set for format "HTML"');
+        }
 
         $scan = new \Psecio\Versionscan\Scan();
         $scan->execute($phpVersion);
 
-        $output->writeLn('Executing against version: '.$scan->getVersion());
-
-        $failedCount = 0;
-
-        $table = $this->getApplication()->getHelperSet()->get('table');
-        $table->setHeaders(array('Status', 'CVE ID', 'Risk', 'Summary'));
-
-        $data = array();
-        $column = 100;
+        $results = array();
+        $failCount = 0;
 
         foreach ($scan->getChecks() as $check) {
             if ($failOnly !== null && $check->getResult() !== true) {
                 continue;
             }
 
-            if ($check->getResult() === true) {
-                $status = '<fg=red>FAIL</fg=red>';
-                $failedCount++;
-            } else {
-                $status = '<fg=green>PASS</fg=green>';
+            $status = $check->getResult() === true ? 'fail' : 'pass';
+            if ($status === 'fail') {
+                $failCount++;
             }
 
-            if ($output->isVerbose() === true) {
-                $summary = trim($check->getSummary());
-            } else {
-                $summary = (strlen($check->getSummary()) > $column
-                    ? substr($check->getSummary(), 0, $column-3) . '...' : $check->getSummary());
-            }
-
-            $data[] = array(
-                $status,
-                $check->getCveId(),
-                $check->getThreat(),
-                $summary,
+            $results[] = array(
+                'status'  => $status,
+                'cve-id'  => $check->getCveId(),
+                'risk'    => $check->getThreat(),
+                'summary' => trim($check->getSummary()),
             );
         }
 
         if ($sort !== false) {
-            usort($data, function($row1, $row2) use ($sort) {
+            usort($results, function($row1, $row2) use ($sort) {
                 $sort = strtolower($sort);
 
                 if ($sort == 'cve') {
-                    $r1 = str_replace(array('CVE', '-'), '', $row1[1]);
-                    $r2 = str_replace(array('CVE', '-'), '', $row2[1]);
+                    $r1 = str_replace(array('CVE', '-'), '', $row1['cve-id']);
+                    $r2 = str_replace(array('CVE', '-'), '', $row2['cve-id']);
 
-                    return ($r1 > $r2) ? -1 : 1;
+                    return $r1 > $r2 ? -1 : 1;
                 } elseif ($sort == 'risk') {
-                    $r1 = (integer)$row1[2];
-                    $r2 = (integer)$row2[2];
+                    $r1 = (integer) $row1['risk'];
+                    $r2 = (integer) $row2['risk'];
 
-                    return ($r1 > $r2) ? -1 : 1;
+                    return $r1 > $r2 ? -1 : 1;
                 }
             });
         }
 
-        $table->setRows($data);
-        $table->render($output);
-
-        $output->writeLn(
-            "\nScan complete\n"
-            .str_repeat('-', 20)."\n"
-            ."Total checks: ".count($scan->getChecks())."\n"
-            ."<fg=red>Failures: ".$failedCount."</fg=red>\n"
+        $options = array(
+            'phpVersion'  => $scan->getVersion(),
+            'checksCount' => count($scan->getChecks()),
+            'failCount'   => $failCount,
+            'outputPath'  => $outputPath,
         );
+
+        $format = $format === null ? 'console' : strtolower($format);
+        $formatClass = '\\Psecio\\Versionscan\\Command\\ScanCommand\\Output\\' . ucwords($format);
+        if (!class_exists($formatClass)) {
+            throw new FormatNotFoundException(sprintf('Output format "%s" not found', $format));
+        }
+
+        $outputHandler = new $formatClass($output, $options);
+
+        return $outputHandler->render($results, $this);
     }
 }
-
-?>
