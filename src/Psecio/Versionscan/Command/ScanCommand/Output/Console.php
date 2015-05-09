@@ -19,13 +19,12 @@ class Console extends Output
         $table = $command->getHelper('table');
         $table->setHeaders(array('Status', 'CVE ID', 'Risk', 'Summary'));
 
-        $rows = array();
-        $column = 100;
+        $columnSize = 100;
 
         for ($i = 0, $length = count($results); $i < $length; $i++) {
             $results[$i]['status'] = 'fail' ? '<fg=red>FAIL</fg=red>' : '<fg=green>PASS</fg=green>';
-            $results[$i]['summary'] = !$output->isVerbose() && strlen($results[$i]['summary']) > $column
-                ? substr($results[$i]['summary'], 0, $column - 3) . '...'
+            $results[$i]['summary'] = !$output->isVerbose() && strlen($results[$i]['summary']) > $columnSize
+                ? substr($results[$i]['summary'], 0, $columnSize - 3) . '...'
                 : $results[$i]['summary'];
         }
 
