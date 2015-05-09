@@ -36,8 +36,10 @@ class ScanCommand extends Command
         $phpVersion = $input->getOption('php-version');
         $failOnly = $input->getOption('fail-only');
         $sort = $input->getOption('sort');
-        $format = $input->getOption('format');
         $outputPath = $input->getOption('output');
+
+        $format = $input->getOption('format');
+        $format = $format === null ? 'console' : strtolower($format);
 
         if ($format === 'html' && $outputPath === null) {
             throw new \InvalidArgumentException('Output path must be set for format "HTML"');
@@ -92,7 +94,6 @@ class ScanCommand extends Command
             'outputPath'  => $outputPath,
         );
 
-        $format = $format === null ? 'console' : strtolower($format);
         $formatClass = '\\Psecio\\Versionscan\\Command\\ScanCommand\\Output\\' . ucwords($format);
         if (!class_exists($formatClass)) {
             throw new FormatNotFoundException(sprintf('Output format "%s" not found', $format));
