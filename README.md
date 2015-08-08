@@ -75,3 +75,22 @@ and either the "cve" or "risk" value:
 
 ```
 bin/versionscan scan --sort=risk
+```
+
+### Output formats
+
+By default *versionscan* will output information directly to the console in a human-readable result. You can also specify other output formats that may be easier to parse programatically (like JSON). Use the `--format` option to change the output:
+
+```
+vendor/bin/versionscan scan --php-version=5.5 --format=json
+```
+
+Supported output formats are `console`, `json`, `xml` and `html`.
+
+The HTML output format requires an `--output` option of the directory to write the file:
+
+```
+vendor/bin/versionscan scan --php-version=5.5 --format=html --output=/var/www/output
+```
+
+The result will be written to a file named something like `versionscan-output-20150808.html`
