@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>VersionScan Results - {{date}}</title>
+        <style>
+            body {
+                font-family: verdana, arial;
+                font-size: 12px;
+                background-color: #EEEEEE;
+            }
+            .container {
+                text-align: center;
+            }
+            .result {
+                width: 500px;
+            }
+            .result tr td {
+                border: 0px solid #000000;
+                color: #FFFFFF;
+                padding: 7px;
+                font-size: 11px;
+                vertical-align: top;
+            }
+            .result tr td.key {
+                width: 90px;
+            }
+            .result tr td.key a,
+            .result tr td.key a:hover,
+            .result tr td.key a:active {
+                color: #FFFFFF;
+            }
+            .result tr td.risk {
+                width: 20px;
+            }
+            .header tr td {
+                background-color: #838383;
+            }
+            .fail {
+                background-color: #830000;
+            }
+            .pass {
+                background-color: #1E8A00;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <h2>VersionScan Results - {{date}}</h2>
+                <table class="result header">
+                    <tr>
+                        <td class="key">CVE ID</td>
+                        <td class="risk">Risk</td>
+                        <td>Summary</td>
+                    </tr>
+                </table>
+                {{results}}
+            </center>
+        </div>
+    </body>
+</html>
