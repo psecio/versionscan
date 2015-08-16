@@ -3942,17 +3942,17 @@
         {
             "threat": "10.0",
             "cveid": "CVE-2015-0235",
-            "summary": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka 'GHOST.'",
+            "summary": "GHOST: glibc gethostbyname buffer overflow",
             "fixVersions": {
                 "base": [
-                    "5.5.6",
-                    "5.4.38",
-                    "5.6.6"
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.38"
                 ]
             }
         },
         {
-            "threat": "0",
+            "threat": "7.5",
             "cveid": "CVE-2015-0273",
             "summary": "Use after free vulnerability in unserialize() with DateTimeZone",
             "fixVersions": {
@@ -3966,12 +3966,11 @@
         {
             "threat": "7.5",
             "cveid": "CVE-2015-1351",
-            "summary": "Use-after-free vulnerability in the _zend_shared_memdup function in zend_shared_alloc.c in the OPcache extension in PHP through 5.6.7 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
+            "summary": "Use After Free in OPcache",
             "fixVersions": {
                 "base": [
                     "5.6.8",
-                    "5.5.24",
-                    "5.4.40"
+                    "5.5.24"
                 ]
             }
         },
@@ -4036,7 +4035,7 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "5.8",
             "cveid": "CVE-2015-2783",
             "summary": "Buffer Over-read in unserialize when parsing Phar",
             "fixVersions": {
@@ -4060,7 +4059,7 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "7.5",
             "cveid": "CVE-2015-3329",
             "summary": "Buffer Overflow when parsing tar/zip/phar in phar_set_inode",
             "fixVersions": {
@@ -4072,9 +4071,9 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "6.8",
             "cveid": "CVE-2015-3330",
-            "summary": "Potential remote code execution with apache 2.4 apache2handler",
+            "summary": "potential remote code execution with apache 2.4 apache2handler",
             "fixVersions": {
                 "base": [
                     "5.6.8",
