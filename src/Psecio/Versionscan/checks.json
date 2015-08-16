@@ -3893,6 +3893,30 @@
         },
         {
             "threat": "7.5",
+            "cveid": "CVE-2014-9705",
+            "summary": "heap buffer overflow in enchant_broker_request_dict()",
+            "fixVersions": {
+                "base": [
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.38"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-9709",
+            "summary": "buffer read overflow in gd_gif_in.c",
+            "fixVersions": {
+                "base": [
+                    "5.6.5",
+                    "5.5.21",
+                    "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
             "cveid": "CVE-2015-0231",
             "summary": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate numerical keys within the serialized properties of an object. NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-8142.",
             "fixVersions": {
@@ -3952,6 +3976,66 @@
             }
         },
         {
+            "threat": "5.0",
+            "cveid": "CVE-2015-1352",
+            "summary": "Null pointer dereference",
+            "fixVersions": {
+                "base": [
+                    "5.6.8",
+                    "5.5.24",
+                    "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-2301",
+            "summary": "use after free in phar_rename_archive()",
+            "fixVersions": {
+                "base": [
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2015-2305",
+            "summary": "heap overflow vulnerability in regcomp.c",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-2331",
+            "summary": "ZIP Integer Overflow leads to writing past heap boundary",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-2348",
+            "summary": "move_uploaded_file allows nulls in path",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
             "threat": "0",
             "cveid": "CVE-2015-2783",
             "summary": "Buffer Over-read in unserialize when parsing Phar",
@@ -3960,6 +4044,18 @@
                     "5.6.8",
                     "5.5.24",
                     "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-2787",
+            "summary": "Use After Free Vulnerability in unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
                 ]
             }
         },
@@ -3984,6 +4080,30 @@
                     "5.6.8",
                     "5.5.24",
                     "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-4147",
+            "summary": "SoapClient's __call() type confusion through unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-4148",
+            "summary": "SoapClient's __call() type confusion through unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
                 ]
             }
         }
