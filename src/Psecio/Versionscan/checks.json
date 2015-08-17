@@ -3735,6 +3735,53 @@
             }
         },
         {
+            "threat": "5.0",
+            "cveid": "CVE-2014-3668",
+            "summary": "Buffer overflow in the date_from_ISO8601 function in the mkgmtime implementation in libxmlrpc/xmlrpc.c in the XMLRPC extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) via (1) a crafted first argument to the xmlrpc_set_type function or (2) a crafted argument to the xmlrpc_decode function, related to an out-of-bounds read operation.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-3669",
+            "summary": "Integer overflow in the object_custom function in ext/standard/var_unserializer.c in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via an argument to the unserialize function that triggers calculation of a large length value.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2014-3670",
+            "summary": "The exif_ifd_make_value function in exif.c in the EXIF extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 operates on floating-point arrays incorrectly, which allows remote attackers to cause a denial of service (heap memory corruption and application crash) or possibly execute arbitrary code via a crafted JPEG image with TIFF thumbnail data that is improperly handled by the exif_thumbnail function.",
+            "fixVersions": {
+                "base": [
+                    "5.4.34",
+                    "5.5.18",
+                    "5.6.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-3710",
+            "summary": "The donote function in readelf.c in file through 5.20, as used in the Fileinfo component in PHP 5.4.34, does not ensure that sufficient note headers are present, which allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted ELF file.",
+            "fixVersions": {
+                "base": [
+                    "5.4.35",
+                    "5.5.19"
+                ]
+            }
+        },
+        {
             "threat": "3.3",
             "cveid": "CVE-2014-3981",
             "summary": "acinclude.m4, as used in the configure script in PHP 5.5.13 and earlier, allows local users to overwrite arbitrary files via a symlink attack on the /tmp/phpglibccheck file. \nPublish Date : 2014-06-08 Last Update Date : 2014-06-09",
@@ -3798,53 +3845,6 @@
             }
         },
         {
-            "threat": "7.5",
-            "cveid": "CVE-2014-3669",
-            "summary": "Integer overflow in the object_custom function in ext/standard/var_unserializer.c in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via an argument to the unserialize function that triggers calculation of a large length value.",
-            "fixVersions": {
-                "base": [
-                    "5.4.34",
-                    "5.5.18",
-                    "5.6.2"
-                ]
-            }
-        },
-        {
-            "threat": "6.8",
-            "cveid": "CVE-2014-3670",
-            "summary": "The exif_ifd_make_value function in exif.c in the EXIF extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 operates on floating-point arrays incorrectly, which allows remote attackers to cause a denial of service (heap memory corruption and application crash) or possibly execute arbitrary code via a crafted JPEG image with TIFF thumbnail data that is improperly handled by the exif_thumbnail function.",
-            "fixVersions": {
-                "base": [
-                    "5.4.34",
-                    "5.5.18",
-                    "5.6.2"
-                ]
-            }
-        },
-        {
-            "threat": "5.0",
-            "cveid": "CVE-2014-3668",
-            "summary": "Buffer overflow in the date_from_ISO8601 function in the mkgmtime implementation in libxmlrpc/xmlrpc.c in the XMLRPC extension in PHP before 5.4.34, 5.5.x before 5.5.18, and 5.6.x before 5.6.2 allows remote attackers to cause a denial of service (application crash) via (1) a crafted first argument to the xmlrpc_set_type function or (2) a crafted argument to the xmlrpc_decode function, related to an out-of-bounds read operation.",
-            "fixVersions": {
-                "base": [
-                    "5.4.34",
-                    "5.5.18",
-                    "5.6.2"
-                ]
-            }
-        },
-        {
-            "threat": "5.0",
-            "cveid": "CVE-2014-3710",
-            "summary": "The donote function in readelf.c in file through 5.20, as used in the Fileinfo component in PHP 5.4.34, does not ensure that sufficient note headers are present, which allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted ELF file.",
-            "fixVersions": {
-                "base": [
-                    "5.4.35",
-                    "5.5.19"
-                ]
-            }
-        },
-        {
             "threat": "6.4",
             "cveid": "CVE-2014-8142",
             "summary": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.36, 5.5.x before 5.5.20, and 5.6.x before 5.6.4 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate keys within the serialized properties of an object, a different vulnerability than CVE-2004-1019.",
@@ -3853,6 +3853,17 @@
                     "5.4.36",
                     "5.6.4",
                     "5.5.20"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-9425",
+            "summary": "Double free vulnerability in the zend_ts_hash_graceful_destroy function in zend_ts_hash.c in the Zend Engine in PHP through 5.5.20 and 5.6.x through 5.6.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
+            "fixVersions": {
+                "base": [
+                    "5.6.5",
+                    "5.5.21"
                 ]
             }
         },
@@ -3869,9 +3880,9 @@
             }
         },
         {
-            "threat": "7.5",
-            "cveid": "CVE-2015-0231",
-            "summary": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate numerical keys within the serialized properties of an object. NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-8142.",
+            "threat": "6.4",
+            "cveid": "CVE-2014-9427",
+            "summary": "sapi/cgi/cgi_main.c in the CGI component in PHP through 5.4.36, 5.5.x through 5.5.20, and 5.6.x through 5.6.4, when mmap is used to read a .php file, does not properly consider the mapping's length during processing of an invalid file that begins with a # character and lacks a newline character, which causes an out-of-bounds read and might (1) allow remote attackers to obtain sensitive information from php-cgi process memory by leveraging the ability to upload a .php file or (2) trigger unexpected code execution if a valid PHP script is present in memory locations adjacent to the mapping.",
             "fixVersions": {
                 "base": [
                     "5.4.37",
@@ -3881,9 +3892,33 @@
             }
         },
         {
-            "threat": "6.4",
-            "cveid": "CVE-2014-9427",
-            "summary": "sapi/cgi/cgi_main.c in the CGI component in PHP through 5.4.36, 5.5.x through 5.5.20, and 5.6.x through 5.6.4, when mmap is used to read a .php file, does not properly consider the mapping's length during processing of an invalid file that begins with a # character and lacks a newline character, which causes an out-of-bounds read and might (1) allow remote attackers to obtain sensitive information from php-cgi process memory by leveraging the ability to upload a .php file or (2) trigger unexpected code execution if a valid PHP script is present in memory locations adjacent to the mapping.",
+            "threat": "7.5",
+            "cveid": "CVE-2014-9705",
+            "summary": "heap buffer overflow in enchant_broker_request_dict()",
+            "fixVersions": {
+                "base": [
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.38"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-9709",
+            "summary": "buffer read overflow in gd_gif_in.c",
+            "fixVersions": {
+                "base": [
+                    "5.6.5",
+                    "5.5.21",
+                    "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-0231",
+            "summary": "Use-after-free vulnerability in the process_nested_data function in ext/standard/var_unserializer.re in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate numerical keys within the serialized properties of an object. NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-8142.",
             "fixVersions": {
                 "base": [
                     "5.4.37",
@@ -3907,17 +3942,17 @@
         {
             "threat": "10.0",
             "cveid": "CVE-2015-0235",
-            "summary": "Heap-based buffer overflow in the __nss_hostname_digits_dots function in glibc 2.2, and other 2.x versions before 2.18, allows context-dependent attackers to execute arbitrary code via vectors related to the (1) gethostbyname or (2) gethostbyname2 function, aka 'GHOST.'",
+            "summary": "GHOST: glibc gethostbyname buffer overflow",
             "fixVersions": {
                 "base": [
-                    "5.5.6",
-                    "5.4.38",
-                    "5.6.6"
+                    "5.6.6",
+                    "5.5.22",
+                    "5.4.38"
                 ]
             }
         },
         {
-            "threat": "0",
+            "threat": "7.5",
             "cveid": "CVE-2015-0273",
             "summary": "Use after free vulnerability in unserialize() with DateTimeZone",
             "fixVersions": {
@@ -3930,41 +3965,77 @@
         },
         {
             "threat": "7.5",
-            "cveid": "CVE-2014-9425",
-            "summary": "Double free vulnerability in the zend_ts_hash_graceful_destroy function in zend_ts_hash.c in the Zend Engine in PHP through 5.5.20 and 5.6.x through 5.6.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
+            "cveid": "CVE-2015-1351",
+            "summary": "Use After Free in OPcache",
             "fixVersions": {
                 "base": [
-                    "5.6.5",
-                    "5.5.21"
+                    "5.6.8",
+                    "5.5.24"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-1352",
+            "summary": "Null pointer dereference",
+            "fixVersions": {
+                "base": [
+                    "5.6.8",
+                    "5.5.24",
+                    "5.4.40"
                 ]
             }
         },
         {
             "threat": "7.5",
-            "cveid": "CVE-2015-1351",
-            "summary": "Use-after-free vulnerability in the _zend_shared_memdup function in zend_shared_alloc.c in the OPcache extension in PHP through 5.6.7 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
+            "cveid": "CVE-2015-2301",
+            "summary": "use after free in phar_rename_archive()",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
-                    "5.5.24",
+                    "5.6.6",
+                    "5.5.22",
                     "5.4.40"
                 ]
             }
         },
         {
-            "threat": "0",
-            "cveid": "CVE-2015-3330",
-            "summary": "Potential remote code execution with apache 2.4 apache2handler",
+            "threat": "6.8",
+            "cveid": "CVE-2015-2305",
+            "summary": "heap overflow vulnerability in regcomp.c",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
-                    "5.5.24",
-                    "5.4.40"
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
                 ]
             }
         },
         {
-            "threat": "0",
+            "threat": "7.5",
+            "cveid": "CVE-2015-2331",
+            "summary": "ZIP Integer Overflow leads to writing past heap boundary",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-2348",
+            "summary": "move_uploaded_file allows nulls in path",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "5.8",
             "cveid": "CVE-2015-2783",
             "summary": "Buffer Over-read in unserialize when parsing Phar",
             "fixVersions": {
@@ -3976,7 +4047,19 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "7.5",
+            "cveid": "CVE-2015-2787",
+            "summary": "Use After Free Vulnerability in unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
             "cveid": "CVE-2015-3329",
             "summary": "Buffer Overflow when parsing tar/zip/phar in phar_set_inode",
             "fixVersions": {
@@ -3984,6 +4067,42 @@
                     "5.6.8",
                     "5.5.24",
                     "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2015-3330",
+            "summary": "potential remote code execution with apache 2.4 apache2handler",
+            "fixVersions": {
+                "base": [
+                    "5.6.8",
+                    "5.5.24",
+                    "5.4.40"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-4147",
+            "summary": "SoapClient's __call() type confusion through unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-4148",
+            "summary": "SoapClient's __call() type confusion through unserialize()",
+            "fixVersions": {
+                "base": [
+                    "5.6.7",
+                    "5.5.23",
+                    "5.4.39"
                 ]
             }
         }
