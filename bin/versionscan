@@ -19,6 +19,7 @@ $output = new ConsoleOutput();
 $app = new Application('PHP Version Security Scanner', '0.1');
 $app->addCommands(array(
     new \Psecio\Versionscan\Command\ScanCommand(),
+    new \Psecio\Versionscan\Command\MissingCommand(),
 ));
 $app->setCatchExceptions(false);
 
