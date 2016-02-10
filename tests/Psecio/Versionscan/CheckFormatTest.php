@@ -29,6 +29,12 @@ class CheckFormatTest extends \PHPUnit_Framework_TestCase
             $this->assertArrayHasKey('summary', $check, 'Missing "summary" for ' . $id);
             $this->assertArrayHasKey('fixVersions', $check, 'Missing "fixVersions" for ' . $id);
             $this->assertArrayHasKey('base', $check['fixVersions'], 'Missing "fixVersions[base]" for ' . $id);
+
+            // Make sure the versions are in order
+            $versions = $check['fixVersions']['base'];
+            $sortedVersions = $versions;
+            natsort($sortedVersions);
+            $this->assertSame($sortedVersions, $versions, 'Versions should be sorted in ascending order (' . $id . ')');
         }
     }
 

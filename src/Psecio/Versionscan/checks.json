@@ -3853,8 +3853,8 @@
             "fixVersions": {
                 "base": [
                     "5.4.36",
-                    "5.6.4",
-                    "5.5.20"
+                    "5.5.20",
+                    "5.6.4"
                 ]
             }
         },
@@ -3864,8 +3864,8 @@
             "summary": "Double free vulnerability in the zend_ts_hash_graceful_destroy function in zend_ts_hash.c in the Zend Engine in PHP through 5.5.20 and 5.6.x through 5.6.4 allows remote attackers to cause a denial of service or possibly have unspecified other impact via unknown vectors.",
             "fixVersions": {
                 "base": [
-                    "5.6.5",
-                    "5.5.21"
+                    "5.5.21",
+                    "5.6.5"
                 ]
             }
         },
@@ -3875,9 +3875,9 @@
             "summary": "The apprentice_load function in libmagic/apprentice.c in the Fileinfo component in PHP through 5.6.4 attempts to perform a free operation on a stack-based character array, which allows remote attackers to cause a denial of service (memory corruption or application crash) or possibly have unspecified other impact via unknown vectors.",
             "fixVersions": {
                 "base": [
-                    "5.6.5",
+                    "5.4.37",
                     "5.5.21",
-                    "5.4.37"
+                    "5.6.5"
                 ]
             }
         },
@@ -3888,8 +3888,8 @@
             "fixVersions": {
                 "base": [
                     "5.4.37",
-                    "5.6.5",
-                    "5.5.21"
+                    "5.5.21",
+                    "5.6.5"
                 ]
             }
         },
@@ -3899,9 +3899,9 @@
             "summary": "heap buffer overflow in enchant_broker_request_dict()",
             "fixVersions": {
                 "base": [
-                    "5.6.6",
+                    "5.4.38",
                     "5.5.22",
-                    "5.4.38"
+                    "5.6.6"
                 ]
             }
         },
@@ -3911,9 +3911,9 @@
             "summary": "buffer read overflow in gd_gif_in.c",
             "fixVersions": {
                 "base": [
-                    "5.6.5",
+                    "5.4.40",
                     "5.5.21",
-                    "5.4.40"
+                    "5.6.5"
                 ]
             }
         },
@@ -3924,8 +3924,8 @@
             "fixVersions": {
                 "base": [
                     "5.4.37",
-                    "5.6.5",
-                    "5.5.21"
+                    "5.5.21",
+                    "5.6.5"
                 ]
             }
         },
@@ -3936,8 +3936,8 @@
             "fixVersions": {
                 "base": [
                     "5.4.37",
-                    "5.6.5",
-                    "5.5.21"
+                    "5.5.21",
+                    "5.6.5"
                 ]
             }
         },
@@ -3947,9 +3947,9 @@
             "summary": "GHOST: glibc gethostbyname buffer overflow",
             "fixVersions": {
                 "base": [
-                    "5.6.6",
+                    "5.4.38",
                     "5.5.22",
-                    "5.4.38"
+                    "5.6.6"
                 ]
             }
         },
@@ -3959,9 +3959,9 @@
             "summary": "Multiple use-after-free vulnerabilities in ext\/date\/php_date.c in PHP before 5.4.38, 5.5.x before 5.5.22, and 5.6.x before 5.6.6 allow remote attackers to execute arbitrary code via crafted serialized input containing a (1) R or (2) r type specifier in (a) DateTimeZone data handled by the php_date_timezone_initialize_from_hash function or (b) DateTime data handled by the php_date_initialize_from_hash function.",
             "fixVersions": {
                 "base": [
-                    "5.6.6",
+                    "5.4.38",
                     "5.5.22",
-                    "5.4.38"
+                    "5.6.6"
                 ]
             }
         },
@@ -3971,8 +3971,8 @@
             "summary": "Use After Free in OPcache",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
-                    "5.5.24"
+                    "5.5.24",
+                    "5.6.8"
                 ]
             }
         },
@@ -3982,9 +3982,9 @@
             "summary": "Null pointer dereference",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
+                    "5.4.40",
                     "5.5.24",
-                    "5.4.40"
+                    "5.6.8"
                 ]
             }
         },
@@ -3994,9 +3994,9 @@
             "summary": "use after free in phar_rename_archive()",
             "fixVersions": {
                 "base": [
-                    "5.6.6",
+                    "5.4.40",
                     "5.5.22",
-                    "5.4.40"
+                    "5.6.6"
                 ]
             }
         },
@@ -4006,9 +4006,9 @@
             "summary": "heap overflow vulnerability in regcomp.c",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4018,9 +4018,9 @@
             "summary": "ZIP Integer Overflow leads to writing past heap boundary",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4030,9 +4030,9 @@
             "summary": "move_uploaded_file allows nulls in path",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4042,9 +4042,9 @@
             "summary": "Buffer Over-read in unserialize when parsing Phar",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
+                    "5.4.40",
                     "5.5.24",
-                    "5.4.40"
+                    "5.6.8"
                 ]
             }
         },
@@ -4054,9 +4054,9 @@
             "summary": "Use After Free Vulnerability in unserialize()",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4066,9 +4066,9 @@
             "summary": "Buffer Overflow when parsing tar/zip/phar in phar_set_inode",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
+                    "5.4.40",
                     "5.5.24",
-                    "5.4.40"
+                    "5.6.8"
                 ]
             }
         },
@@ -4078,9 +4078,9 @@
             "summary": "The php_handler function in sapi/apache2handler/sapi_apache2.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8, when the Apache HTTP Server 2.4.x is used, allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via pipelined HTTP requests that result in a &quot;deconfigured interpreter.&quot;",
             "fixVersions": {
                 "base": [
-                    "5.6.8",
+                    "5.4.40",
                     "5.5.24",
-                    "5.4.40"
+                    "5.6.8"
                 ]
             }
         },
@@ -4090,9 +4090,9 @@
             "summary": "SoapClient's __call() type confusion through unserialize()",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4102,9 +4102,9 @@
             "summary": "SoapClient's __call() type confusion through unserialize()",
             "fixVersions": {
                 "base": [
-                    "5.6.7",
+                    "5.4.39",
                     "5.5.23",
-                    "5.4.39"
+                    "5.6.7"
                 ]
             }
         },
@@ -4114,9 +4114,9 @@
             "summary": "Algorithmic complexity vulnerability in the multipart_buffer_headers function in main\/rfc1867.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote attackers to cause a denial of service (CPU consumption) via crafted form data that triggers an improper order-of-growth outcome.",
             "fixVersions": {
                 "base": [
-                    "5.6.9",
+                    "5.4.41",
                     "5.5.25",
-                    "5.4.41"
+                    "5.6.9"
                 ]
             }
         },
@@ -4136,8 +4136,8 @@
             "summary": "The BEGIN regular expression in the awk script detector in magic\/Magdir\/commands in file before 5.15 uses multiple wildcards with unlimited repetitions, which allows context-dependent attackers to cause a denial of service (CPU consumption) via a crafted ASCII file that triggers a large amount of backtracking, as demonstrated via a file with many newline characters.",
             "fixVersions": {
                 "base": [
-                    "5.5.11",
-                    "5.4.27"
+                    "5.4.27",
+                    "5.5.11"
                 ]
             }
         },
@@ -4147,8 +4147,8 @@
             "summary": "Fine Free file before 5.17 allows context-dependent attackers to cause a denial of service (infinite recursion, CPU consumption, and crash) via a crafted indirect offset value in the magic of a file.",
             "fixVersions": {
                 "base": [
-                    "5.5.10",
-                    "5.4.26"
+                    "5.4.26",
+                    "5.5.10"
                 ]
             }
         },
