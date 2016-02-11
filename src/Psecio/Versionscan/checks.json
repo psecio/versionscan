@@ -3908,7 +3908,7 @@
             }
         },
         {
-            "threat": "6.4",
+            "threat": "7.5",
             "cveid": "CVE-2014-8142",
             "summary": "Use-after-free vulnerability in the process_nested_data function in ext\/standard\/var_unserializer.re in PHP before 5.4.36, 5.5.x before 5.5.20, and 5.6.x before 5.6.4 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate keys within the serialized properties of an object, a different vulnerability than CVE-2004-1019.",
             "fixVersions": {
@@ -3943,7 +3943,7 @@
             }
         },
         {
-            "threat": "6.4",
+            "threat": "7.5",
             "cveid": "CVE-2014-9427",
             "summary": "sapi\/cgi\/cgi_main.c in the CGI component in PHP through 5.4.36, 5.5.x through 5.5.20, and 5.6.x through 5.6.4, when mmap is used to read a .php file, does not properly consider the mapping's length during processing of an invalid file that begins with a # character and lacks a newline character, which causes an out-of-bounds read and might (1) allow remote attackers to obtain sensitive information from php-cgi process memory by leveraging the ability to upload a .php file or (2) trigger unexpected code execution if a valid PHP script is present in memory locations adjacent to the mapping.",
             "fixVersions": {
