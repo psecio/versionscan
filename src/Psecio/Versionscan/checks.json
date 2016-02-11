@@ -1042,6 +1042,16 @@
             }
         },
         {
+            "threat": "2.1",
+            "cveid": "CVE-2006-7204",
+            "summary": "The imap_body function in PHP before 4.4.4 does not implement safemode or open_basedir checks, which allows local users to read arbitrary files or list arbitrary directory contents.",
+            "fixVersions": {
+                "base": [
+                    "4.4.4"
+                ]
+            }
+        },
+        {
             "threat": "5.0",
             "cveid": "CVE-2006-7243",
             "summary": "PHP before 5.3.4 accepts the \\0 character in a pathname, which might allow context-dependent attackers to bypass intended access restrictions by placing a safe file extension after this character, as demonstrated by .php\\0.jpg at the end of the argument to the file_exists function.",
@@ -1060,6 +1070,145 @@
             }
         },
         {
+            "threat": "10.0",
+            "cveid": "CVE-2007-0448",
+            "summary": "The fopen function in PHP 5.2.0 does not properly handle invalid URI handlers, which allows context-dependent attackers to bypass safe_mode restrictions and read arbitrary files via a file path specified with an invalid URI, as demonstrated via the srpath URI.",
+            "fixVersions": {
+                "base": [
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-0905",
+            "summary": "PHP before 5.2.1 allows attackers to bypass safe_mode and open_basedir restrictions via unspecified vectors in the session extension.  NOTE: it is possible that this issue is a duplicate of CVE-2006-6383.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-0906",
+            "summary": "Multiple buffer overflows in PHP before 5.2.1 allow attackers to cause a denial of service and possibly execute arbitrary code via unspecified vectors in the (1) session, (2) zip, (3) imap, and (4) sqlite extensions; (5) stream filters; and the (6) str_replace, (7) mail, (8) ibase_delete_user, (9) ibase_add_user, and (10) ibase_modify_user functions.  NOTE: vector 6 might actually be an integer overflow (CVE-2007-1885).  NOTE: as of 20070411, vector (3) might involve the imap_mail_compose function (CVE-2007-1825).",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-0907",
+            "summary": "Buffer underflow in PHP before 5.2.1 allows attackers to cause a denial of service via unspecified vectors involving the sapi_header_op function.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-0908",
+            "summary": "The WDDX deserializer in the wddx extension in PHP 5 before 5.2.1 and PHP 4 before 4.4.5 does not properly initialize the key_length variable for a numerical key, which allows context-dependent attackers to read stack memory via a wddxPacket element that contains a variable with a string name before a numerical variable.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.4",
+                    "4.2.5",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-0909",
+            "summary": "Multiple format string vulnerabilities in PHP before 5.2.1 might allow attackers to execute arbitrary code via format string specifiers to (1) all of the *print functions on 64-bit systems, and (2) the odbc_result_all function.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "10.0",
+            "cveid": "CVE-2007-0910",
+            "summary": "Unspecified vulnerability in PHP before 5.2.1 allows attackers to \"clobber\" certain super-global variables via unspecified vectors.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-0911",
+            "summary": "Off-by-one error in the str_ireplace function in PHP 5.2.1 might allow context-dependent attackers to cause a denial of service (crash).",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2007-0988",
+            "summary": "The zend_hash_init function in PHP 5 before 5.2.1 and PHP 4 before 4.4.5, when running on a 64-bit platform, allows context-dependent attackers to cause a denial of service (infinite loop) by unserializing certain integer expressions, which only cause 32-bit arguments to be used after the check for a negative value, as demonstrated by an \"a:2147483649:{\" argument.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.4",
+                    "4.2.5",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
             "threat": "6.8",
             "cveid": "CVE-2007-1001",
             "summary": "Multiple integer overflows in the (1) createwbmp and (2) readwbmp functions in wbmp.c in the GD library (libgd) in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 allow context-dependent attackers to execute arbitrary code via Wireless Bitmap (WBMP) images with large width or height values.",
@@ -1073,6 +1222,683 @@
                     "5.0.6",
                     "5.1.7",
                     "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1285",
+            "summary": "The Zend Engine in PHP 4.x before 4.4.7, and 5.x before 5.2.2, allows remote attackers to cause a denial of service (stack exhaustion and PHP crash) via deeply nested arrays, which trigger deep recursion in the variable destruction routines.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1286",
+            "summary": "Integer overflow in PHP 4.4.4 and earlier allows remote context-dependent attackers to execute arbitrary code via a long string to the unserialize function, which triggers the overflow in the ZVAL reference counter.",
+            "fixVersions": {
+                "base": [
+                    "4.4.5"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2007-1287",
+            "summary": "A regression error in the phpinfo function in PHP 4.4.3 to 4.4.6, and PHP 6.0 in CVS, allows remote attackers to conduct cross-site scripting (XSS) attacks via GET, POST, or COOKIE array values, which are not escaped in the phpinfo output, as originally fixed for CVE-2005-3388.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1375",
+            "summary": "Integer overflow in the substr_compare function in PHP 5.2.1 and earlier allows context-dependent attackers to read sensitive memory via a large value in the length argument, a different vulnerability than CVE-2006-1991.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1376",
+            "summary": "The shmop functions in PHP before 4.4.5, and before 5.2.1 in the 5.x series, do not verify that their arguments correspond to a shmop resource, which allows context-dependent attackers to read and write arbitrary memory locations via arguments associated with an inappropriate resource, as demonstrated by a GD Image resource.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.6",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.1",
+            "cveid": "CVE-2007-1378",
+            "summary": "The ovrimos_longreadlen function in the Ovrimos extension for PHP before 4.4.5 allows context-dependent attackers to write to arbitrary memory locations via the result_id and length arguments.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5"
+                ]
+            }
+        },
+        {
+            "threat": "5.1",
+            "cveid": "CVE-2007-1379",
+            "summary": "The ovrimos_close function in the Ovrimos extension for PHP before 4.4.5 can trigger efree of an arbitrary address, which might allow context-dependent attackers to execute arbitrary code.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1380",
+            "summary": "The php_binary serialization handler in the session extension in PHP before 4.4.5, and 5.x before 5.2.1, allows context-dependent attackers to obtain sensitive information (memory contents) via a serialized variable entry with a large length value, which triggers a buffer over-read.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.6",
+            "cveid": "CVE-2007-1381",
+            "summary": "The wddx_deserialize function in wddx.c 1.119.2.10.2.12 and 1.119.2.10.2.13 in PHP 5, as modified in CVS on 20070224 and fixed on 20070304, calls strlcpy where strlcat was intended and uses improper arguments, which allows context-dependent attackers to execute arbitrary code via a WDDX packet with a malformed overlap of a STRING element, which triggers a buffer overflow.",
+            "fixVersions": {
+                "base": [
+                    "5.0.1"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1396",
+            "summary": "The import_request_variables function in PHP 4.0.7 through 4.4.6, and 5.x before 5.2.2, when called without a prefix, does not prevent the (1) GET, (2) POST, (3) COOKIE, (4) FILES, (5) SERVER, (6) SESSION, and other superglobals from being overwritten, which allows remote attackers to spoof source IP address and Referer data, and have other unspecified impact.  NOTE: it could be argued that this is a design limitation of PHP and that only the misuse of this feature, i.e. implementation bugs in applications, should be included in CVE. However, it has been fixed by the vendor.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "10.0",
+            "cveid": "CVE-2007-1399",
+            "summary": "Stack-based buffer overflow in the zip:\/\/ URL wrapper in PECL ZIP 1.8.3 and earlier, as bundled with PHP 5.2.0 and 5.2.1, allows remote attackers to execute arbitrary code via a long zip:\/\/ URL, as demonstrated by actively triggering URL access from a remote PHP interpreter via avatar upload or blog pingback.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.9",
+            "cveid": "CVE-2007-1401",
+            "summary": "Buffer overflow in the crack extension (CrackLib), as bundled with PHP 4.4.6 and other versions before 5.0.0, might allow local users to gain privileges via a long argument to the crack_opendict function.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1411",
+            "summary": "Buffer overflow in PHP 4.4.6 and earlier, and unspecified PHP 5 versions, allows local and possibly remote attackers to execute arbitrary code via long server name arguments to the (1) mssql_connect and (2) mssql_pconnect functions.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7",
+                    "5.4.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1412",
+            "summary": "The cpdf_open function in the ClibPDF (cpdf) extension in PHP 4.4.6 allows context-dependent attackers to obtain sensitive information (script source code) via a long string in the second argument.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1413",
+            "summary": "Buffer overflow in the snmpget function in the snmp extension in PHP 5.2.3 and earlier, including PHP 4.4.6 and probably other PHP 4 versions, allows context-dependent attackers to execute arbitrary code via a long value in the third argument (object id).",
+            "fixVersions": {
+                "base": [
+                    "4.4.7",
+                    "5.2.4"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1452",
+            "summary": "The FDF support (ext\/fdf) in PHP 5.2.0 and earlier does not implement the input filtering hooks for ext\/filter, which allows remote attackers to bypass web site filters via an application\/vnd.fdf formatted POST.",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1453",
+            "summary": "Buffer underflow in the PHP_FILTER_TRIM_DEFAULT macro in the filtering extension (ext\/filter) in PHP 5.2.0 allows context-dependent attackers to execute arbitrary code by calling filter_var with certain modes such as FILTER_VALIDATE_INT, which causes filter to write a null byte in whitespace that precedes the buffer.",
+            "fixVersions": {
+                "base": [
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2007-1454",
+            "summary": "ext\/filter in PHP 5.2.0, when FILTER_SANITIZE_STRING is used with the FILTER_FLAG_STRIP_LOW flag, does not properly strip HTML tags, which allows remote attackers to conduct cross-site scripting (XSS) attacks via HTML with a '<' character followed by certain whitespace characters, which passes one filter but is collapsed into a valid tag, as demonstrated using %0b.",
+            "fixVersions": {
+                "base": [
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1460",
+            "summary": "The zip:\/\/ URL wrapper provided by the PECL zip extension in PHP before 4.4.7, and 5.2.0 and 5.2.1, does not implement safemode or open_basedir checks, which allows remote attackers to read ZIP archives located outside of the intended directories.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1461",
+            "summary": "The compress.bzip2:\/\/ URL wrapper provided by the bz2 extension in PHP before 4.4.7, and 5.x before 5.2.2, does not implement safemode or open_basedir checks, which allows remote attackers to read bzip2 archives located outside of the intended directories.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.4",
+            "cveid": "CVE-2007-1475",
+            "summary": "Multiple buffer overflows in the (1) ibase_connect and (2) ibase_pconnect functions in the interbase extension in PHP 4.4.6 and earlier allow context-dependent attackers to execute arbitrary code via a long argument.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7"
+                ]
+            }
+        },
+        {
+            "threat": "4.6",
+            "cveid": "CVE-2007-1484",
+            "summary": "The array_user_key_compare function in PHP 4.4.6 and earlier, and 5.x up to 5.2.1, makes erroneous calls to zval_dtor, which triggers memory corruption and allows local users to bypass safe_mode and execute arbitrary code via a certain unset operation after array_user_key_compare has been called.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1521",
+            "summary": "Double free vulnerability in PHP before 4.4.7, and 5.x before 5.2.2, allows context-dependent attackers to execute arbitrary code by interrupting the session_regenerate_id function, as demonstrated by calling a userspace error handler or triggering a memory limit violation.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1522",
+            "summary": "Double free vulnerability in the session extension in PHP 5.2.0 and 5.2.1 allows context-dependent attackers to execute arbitrary code via illegal characters in a session identifier, which is rejected by an internal session storage module, which calls the session identifier generator with an improper environment, leading to code execution when the generator is interrupted, as demonstrated by triggering a memory limit violation or certain PHP errors.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "9.3",
+            "cveid": "CVE-2007-1581",
+            "summary": "The resource system in PHP 5.0.0 through 5.2.1 allows context-dependent attackers to execute arbitrary code by interrupting the hash_update_file function via a userspace (1) error or (2) stream handler, which can then be used to destroy and modify internal resources.  NOTE: it was later reported that PHP 5.2 through 5.2.13 and 5.3 through 5.3.2 are also affected.",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.14",
+                    "5.3.3"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1582",
+            "summary": "The resource system in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 allows context-dependent attackers to execute arbitrary code by interrupting certain functions in the GD (ext\/gd) extension and unspecified other extensions via a userspace error handler, which can be used to destroy and modify internal resources.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1583",
+            "summary": "The mb_parse_str function in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 sets the internal register_globals flag and does not disable it in certain cases when a script terminates, which allows remote attackers to invoke available PHP scripts with register_globals functionality that is not detectable by these scripts, as demonstrated by forcing a memory_limit violation.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1584",
+            "summary": "Buffer underflow in the header function in PHP 5.2.0 allows context-dependent attackers to execute arbitrary code by passing an all-whitespace string to this function, which causes it to write '\\0' characters in whitespace that precedes the string.",
+            "fixVersions": {
+                "base": [
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1649",
+            "summary": "PHP 5.2.1 allows context-dependent attackers to read portions of heap memory by executing certain scripts with a serialized data input string beginning with S:, which does not properly track the number of input bytes being processed.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1700",
+            "summary": "The session extension in PHP 4 before 4.4.5, and PHP 5 before 5.2.1, calculates the reference count for the session variables without considering the internal pointer from the session globals, which allows context-dependent attackers to execute arbitrary code via a crafted string in the session_register after unsetting HTTP_SESSION_VARS and _SESSION, which destroys the session data Hashtable.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1701",
+            "summary": "PHP 4 before 4.4.5, and PHP 5 before 5.2.1, when register_globals is enabled, allows context-dependent attackers to execute arbitrary code via deserialization of session data, which overwrites arbitrary global variables, as demonstrated by calling session_decode on a string beginning with \"_SESSION|s:39:\".",
+            "fixVersions": {
+                "base": [
+                    "4.4.5",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2007-1709",
+            "summary": "Buffer overflow in the confirm_phpdoc_compiled function in the phpDOC extension (PECL phpDOC) in PHP 5.2.1 allows context-dependent attackers to execute arbitrary code via a long argument string.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2007-1710",
+            "summary": "The readfile function in PHP 4.4.4, 5.1.6, and 5.2.1 allows context-dependent attackers to bypass safe_mode restrictions and read arbitrary files by referring to local files with a certain URL syntax instead of a pathname syntax, as demonstrated by a filename preceded a \"php:\/\/..\/..\/\" sequence.",
+            "fixVersions": {
+                "base": [
+                    "4.4.5",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1711",
+            "summary": "Double free vulnerability in the unserializer in PHP 4.4.5 and 4.4.6 allows context-dependent attackers to execute arbitrary code by overwriting variables pointing to (1) the GLOBALS array or (2) the session data in _SESSION.  NOTE: this issue was introduced when attempting to patch CVE-2007-1701 (MOPB-31-2007).",
+            "fixVersions": {
+                "base": [
+                    "4.4.7"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1717",
+            "summary": "The mail function in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 truncates e-mail messages at the first ASCIIZ ('\\0') byte, which might allow context-dependent attackers to prevent intended information from being delivered in e-mail messages.  NOTE: this issue might be security-relevant in cases when the trailing contents of e-mail messages are important, such as logging information or if the message is expected to be well-formed.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1718",
+            "summary": "CRLF injection vulnerability in the mail function in PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 allows remote attackers to inject arbitrary e-mail headers and possibly conduct spam attacks via a control character immediately following folding of the (1) Subject or (2) To parameter, as demonstrated by a parameter containing a \"\\r\\n\\t\\n\" sequence, related to an increment bug in the SKIP_LONG_HEADER_SEP macro.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1777",
+            "summary": "Integer overflow in the zip_read_entry function in PHP 4 before 4.4.5 allows remote attackers to execute arbitrary code via a ZIP archive that contains an entry with a length value of 0xffffffff, which is incremented before use in an emalloc call, triggering a heap overflow.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5"
+                ]
+            }
+        },
+        {
+            "threat": "5.1",
+            "cveid": "CVE-2007-1824",
+            "summary": "Buffer overflow in the php_stream_filter_create function in PHP 5 before 5.2.1 allows remote attackers to cause a denial of service (application crash) via a php:\/\/filter\/ URL that has a name ending in the '.' character.",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1825",
+            "summary": "Buffer overflow in the imap_mail_compose function in PHP 5 before 5.2.1, and PHP 4 before 4.4.5, allows remote attackers to execute arbitrary code via a long boundary string in a type.parameters field. NOTE: as of 20070411, it appears that this issue might be subsumed by CVE-2007-0906.3.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "4.6",
+            "cveid": "CVE-2007-1835",
+            "summary": "PHP 4 before 4.4.5 and PHP 5 before 5.2.1, when using an empty session save path (session.save_path), uses the TMPDIR default after checking the restrictions, which allows local users to bypass open_basedir restrictions.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1864",
+            "summary": "Buffer overflow in the bundled libxmlrpc library in PHP before 4.4.7, and 5.x before 5.2.2, has unknown impact and remote attack vectors.",
+            "fixVersions": {
+                "base": [
+                    "4.4.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.8",
+            "cveid": "CVE-2007-1883",
+            "summary": "PHP 4.0.0 through 4.4.6 and 5.0.0 through 5.2.1 allows context-dependent attackers to read arbitrary memory locations via an interruption that triggers a user space error handler that changes a parameter to an arbitrary pointer, as demonstrated via the iptcembed function, which calls certain convert_to_* functions with its input parameters.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1884",
+            "summary": "Multiple integer signedness errors in the printf function family in PHP 4 before 4.4.5 and PHP 5 before 5.2.1 on 64 bit machines allow context-dependent attackers to execute arbitrary code via (1) certain negative argument numbers that arise in the php_formatted_print function because of 64 to 32 bit truncation, and bypass a check for the maximum allowable value; and (2) a width and precision of -1, which make it possible for the php_sprintf_appendstring function to place an internal buffer at an arbitrary memory location.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1885",
+            "summary": "Integer overflow in the str_replace function in PHP 4 before 4.4.5 and PHP 5 before 5.2.1 allows context-dependent attackers to execute arbitrary code via a single character search string in conjunction with a long replacement string, which overflows a 32 bit length counter.  NOTE: this is probably the same issue as CVE-2007-0906.6.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2007-1886",
+            "summary": "Integer overflow in the str_replace function in PHP 4.4.5 and PHP 5.2.1 allows context-dependent attackers to have an unknown impact via a single character search string in conjunction with a single character replacement string, which causes an \"off by one overflow.\"",
+            "fixVersions": {
+                "base": [
+                    "4.4.6",
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1887",
+            "summary": "Buffer overflow in the sqlite_decode_binary function in the bundled sqlite library in PHP 4 before 4.4.5 and PHP 5 before 5.2.1 allows context-dependent attackers to execute arbitrary code via an empty value of the in parameter, as demonstrated by calling the sqlite_udf_decode_binary function with a 0x01 character.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1888",
+            "summary": "Buffer overflow in the sqlite_decode_binary function in src\/encode.c in SQLite 2, as used by PHP 4.x through 5.x and other applications, allows context-dependent attackers to execute arbitrary code via an empty value of the in parameter.  NOTE: some PHP installations use a bundled version of sqlite without this vulnerability.  The SQLite developer has argued that this issue could be due to a misuse of the sqlite_decode_binary() API.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.7",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.2",
+                    "5.4.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1889",
+            "summary": "Integer signedness error in the _zend_mm_alloc_int function in the Zend Memory Manager in PHP 5.2.0 allows remote attackers to execute arbitrary code via a large emalloc request, related to an incorrect signed long cast, as demonstrated via the HTTP SOAP client in PHP, and via a call to msg_receive with the largest positive integer value of maxsize.",
+            "fixVersions": {
+                "base": [
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2007-1890",
+            "summary": "Integer overflow in the msg_receive function in PHP 4 before 4.4.5 and PHP 5 before 5.2.1, on FreeBSD and possibly other platforms, allows context-dependent attackers to execute arbitrary code via certain maxsize values, as demonstrated by 0xffffffff.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.5",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-1900",
+            "summary": "CRLF injection vulnerability in the FILTER_VALIDATE_EMAIL filter in ext\/filter in PHP 5.2.0 and 5.2.1 allows context-dependent attackers to inject arbitrary e-mail headers via an e-mail address with a '\\n' character, which causes a regular expression to ignore the subsequent part of the address string.",
+            "fixVersions": {
+                "base": [
+                    "5.2.2"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2007-2369",
+            "summary": "Directory traversal vulnerability in picture.php in WebSPELL 4.01.02 and earlier, when PHP before 4.3.0 is used, allows remote attackers to read arbitrary files via a .. (dot dot) in the id parameter.",
+            "fixVersions": {
+                "base": [
+                    "4.01.3",
+                    "4.2.4"
                 ]
             }
         },
@@ -3571,6 +4397,16 @@
             }
         },
         {
+            "threat": "4.6",
+            "cveid": "CVE-2013-6501",
+            "summary": "The default soap.wsdl_cache_dir setting in (1) php.ini-production and (2) php.ini-development in PHP through 5.6.7 specifies the \/tmp directory, which makes it easier for local users to conduct WSDL injection attacks by creating a file under \/tmp with a predictable filename that is used by the get_sdl function in ext\/soap\/php_sdl.c.",
+            "fixVersions": {
+                "base": [
+                    "5.6.8"
+                ]
+            }
+        },
+        {
             "threat": "5.0",
             "cveid": "CVE-2013-6712",
             "summary": "The scan function in ext\/date\/lib\/parse_iso_intervals.c in PHP through 5.5.6 does not properly restrict creation of DateInterval objects, which might allow remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted interval specification.",
@@ -3908,6 +4744,27 @@
             }
         },
         {
+            "threat": "3.6",
+            "cveid": "CVE-2014-5459",
+            "summary": "The PEAR_REST class in REST.php in PEAR in PHP through 5.6.0 allows local users to write to arbitrary files via a symlink attack on a (1) rest.cachefile or (2) rest.cacheid file in \/tmp\/pear\/cache\/, related to the retrieveCacheFirst and useLocalCache functions.",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.3",
+                    "4.2.4",
+                    "4.3.12",
+                    "4.4.10",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.29",
+                    "5.4.31",
+                    "5.5.15",
+                    "5.6.1"
+                ]
+            }
+        },
+        {
             "threat": "7.5",
             "cveid": "CVE-2014-8142",
             "summary": "Use-after-free vulnerability in the process_nested_data function in ext\/standard\/var_unserializer.re in PHP before 5.4.36, 5.5.x before 5.5.20, and 5.6.x before 5.6.4 allows remote attackers to execute arbitrary code via a crafted unserialize call that leverages improper handling of duplicate keys within the serialized properties of an object, a different vulnerability than CVE-2004-1019.",
@@ -3916,6 +4773,16 @@
                     "5.4.36",
                     "5.5.20",
                     "5.6.5"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-8626",
+            "summary": "Stack-based buffer overflow in the date_from_ISO8601 function in ext\/xmlrpc\/libxmlrpc\/xmlrpc.c in PHP before 5.2.7 allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code by including a timezone field in a date, leading to improper XML-RPC encoding.",
+            "fixVersions": {
+                "base": [
+                    "5.2.7"
                 ]
             }
         },
@@ -3957,6 +4824,30 @@
                     "5.1.7",
                     "5.2.18",
                     "5.3.29",
+                    "5.4.37",
+                    "5.5.21",
+                    "5.6.5"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2014-9652",
+            "summary": "The mconvert function in softmagic.c in file before 5.21, as used in the Fileinfo component in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5, does not properly handle a certain string-length field during a copy of a truncated version of a Pascal string, which might allow remote attackers to cause a denial of service (out-of-bounds memory access and application crash) via a crafted file.",
+            "fixVersions": {
+                "base": [
+                    "5.4.37",
+                    "5.5.21",
+                    "5.6.5"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2014-9653",
+            "summary": "readelf.c in file before 5.22, as used in the Fileinfo component in PHP before 5.4.37, 5.5.x before 5.5.21, and 5.6.x before 5.6.5, does not consider that pread calls sometimes read only a subset of the available data, which allows remote attackers to cause a denial of service (uninitialized memory access) or possibly have unspecified other impact via a crafted ELF file.",
+            "fixVersions": {
+                "base": [
                     "5.4.37",
                     "5.5.21",
                     "5.6.5"
@@ -4132,6 +5023,18 @@
         },
         {
             "threat": "7.5",
+            "cveid": "CVE-2015-3307",
+            "summary": "The phar_parse_metadata function in ext\/phar\/phar.c in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allows remote attackers to cause a denial of service (heap metadata corruption) or possibly have unspecified other impact via a crafted tar archive.",
+            "fixVersions": {
+                "base": [
+                    "5.4.40",
+                    "5.5.24",
+                    "5.6.8"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
             "cveid": "CVE-2015-3329",
             "summary": "Multiple stack-based buffer overflows in the phar_set_inode function in phar_internal.h in PHP before 5.4.40, 5.5.x before 5.5.24, and 5.6.x before 5.6.8 allow remote attackers to execute arbitrary code via a crafted length value in a (1) tar, (2) phar, or (3) ZIP archive.",
             "fixVersions": {
@@ -4156,8 +5059,56 @@
         },
         {
             "threat": "5.0",
+            "cveid": "CVE-2015-4021",
+            "summary": "The phar_parse_tarfile function in ext\/phar\/tar.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 does not verify that the first character of a filename is different from the \\0 character, which allows remote attackers to cause a denial of service (integer underflow and memory corruption) via a crafted entry in a tar archive.",
+            "fixVersions": {
+                "base": [
+                    "5.4.41",
+                    "5.5.25",
+                    "5.6.9"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-4022",
+            "summary": "Integer overflow in the ftp_genlist function in ext\/ftp\/ftp.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote FTP servers to execute arbitrary code via a long reply to a LIST command, leading to a heap-based buffer overflow.",
+            "fixVersions": {
+                "base": [
+                    "5.4.41",
+                    "5.5.25",
+                    "5.6.9"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
             "cveid": "CVE-2015-4024",
             "summary": "Algorithmic complexity vulnerability in the multipart_buffer_headers function in main\/rfc1867.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 allows remote attackers to cause a denial of service (CPU consumption) via crafted form data that triggers an improper order-of-growth outcome.",
+            "fixVersions": {
+                "base": [
+                    "5.4.41",
+                    "5.5.25",
+                    "5.6.9"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-4025",
+            "summary": "PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 truncates a pathname upon encountering a \\x00 character in certain situations, which allows remote attackers to bypass intended extension restrictions and access files or directories with unexpected names via a crafted argument to (1) set_include_path, (2) tempnam, (3) rmdir, or (4) readlink.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2006-7243.",
+            "fixVersions": {
+                "base": [
+                    "5.4.41",
+                    "5.5.25",
+                    "5.6.9"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-4026",
+            "summary": "The pcntl_exec implementation in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 truncates a pathname upon encountering a \\x00 character, which might allow remote attackers to bypass intended extension restrictions and execute files with unexpected names via a crafted first argument.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2006-7243.",
             "fixVersions": {
                 "base": [
                     "5.4.41",
@@ -4187,6 +5138,140 @@
                     "5.4.39",
                     "5.5.23",
                     "5.6.7"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-5590",
+            "summary": "Stack-based buffer overflow in the phar_fix_filepath function in ext\/phar\/phar.c in PHP before 5.4.43, 5.5.x before 5.5.27, and 5.6.x before 5.6.11 allows remote attackers to cause a denial of service or possibly have unspecified other impact via a large length value, as demonstrated by mishandling of an e-mail attachment by the imap PHP extension.",
+            "fixVersions": {
+                "base": [
+                    "5.4.43",
+                    "5.5.27",
+                    "5.6.11"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-6527",
+            "summary": "The php_str_replace_in_subject function in ext\/standard\/string.c in PHP 7.x before 7.0.0 allows remote attackers to execute arbitrary code via a crafted value in the third argument to the str_ireplace function.",
+            "fixVersions": {
+                "base": [
+                    "7.0.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-6831",
+            "summary": "Multiple use-after-free vulnerabilities in SPL in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allow remote attackers to execute arbitrary code via vectors involving (1) ArrayObject, (2) SplObjectStorage, and (3) SplDoublyLinkedList, which are mishandled during unserialization.",
+            "fixVersions": {
+                "base": [
+                    "5.4.44",
+                    "5.5.28",
+                    "5.6.12"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-6832",
+            "summary": "Use-after-free vulnerability in the SPL unserialize implementation in ext\/spl\/spl_array.c in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allows remote attackers to execute arbitrary code via crafted serialized data that triggers misuse of an array field.",
+            "fixVersions": {
+                "base": [
+                    "5.4.44",
+                    "5.5.28",
+                    "5.6.12"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2015-6833",
+            "summary": "Directory traversal vulnerability in the PharData class in PHP before 5.4.44, 5.5.x before 5.5.28, and 5.6.x before 5.6.12 allows remote attackers to write to arbitrary files via a .. (dot dot) in a ZIP archive entry that is mishandled during an extractTo call.",
+            "fixVersions": {
+                "base": [
+                    "5.4.44",
+                    "5.5.28",
+                    "5.6.12"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-6836",
+            "summary": "The SoapClient __call method in ext\/soap\/soap.c in PHP before 5.4.45, 5.5.x before 5.5.29, and 5.6.x before 5.6.13 does not properly manage headers, which allows remote attackers to execute arbitrary code via crafted serialized data that triggers a \"type confusion\" in the serialize_function_call function.",
+            "fixVersions": {
+                "base": [
+                    "5.4.45",
+                    "5.5.29",
+                    "5.6.13"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2015-7803",
+            "summary": "The phar_get_entry_data function in ext\/phar\/util.c in PHP before 5.5.30 and 5.6.x before 5.6.14 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via a .phar file with a crafted TAR archive entry in which the Link indicator references a file that does not exist.",
+            "fixVersions": {
+                "base": [
+                    "5.5.30",
+                    "5.6.14"
+                ]
+            }
+        },
+        {
+            "threat": "6.8",
+            "cveid": "CVE-2015-7804",
+            "summary": "Off-by-one error in the phar_parse_zipfile function in ext\/phar\/zip.c in PHP before 5.5.30 and 5.6.x before 5.6.14 allows remote attackers to cause a denial of service (uninitialized pointer dereference and application crash) by including the \/ filename in a .zip PHAR archive.",
+            "fixVersions": {
+                "base": [
+                    "5.5.30",
+                    "5.6.14"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-8616",
+            "summary": "Use-after-free vulnerability in the Collator::sortWithSortKeys function in ext\/intl\/collator\/collator_sort.c in PHP 7.x before 7.0.1 allows remote attackers to cause a denial of service (application crash) or possibly have unspecified other impact by leveraging the relationships between a key buffer and a destroyed array.",
+            "fixVersions": {
+                "base": [
+                    "7.0.1"
+                ]
+            }
+        },
+        {
+            "threat": "10.0",
+            "cveid": "CVE-2015-8617",
+            "summary": "Format string vulnerability in the zend_throw_or_error function in Zend\/zend_execute_API.c in PHP 7.x before 7.0.1 allows remote attackers to execute arbitrary code via format string specifiers in a string that is misused as a class name, leading to incorrect error handling.",
+            "fixVersions": {
+                "base": [
+                    "7.0.2"
+                ]
+            }
+        },
+        {
+            "threat": "6.4",
+            "cveid": "CVE-2016-1903",
+            "summary": "The gdImageRotateInterpolated function in ext\/gd\/libgd\/gd_interpolation.c in PHP before 5.5.31, 5.6.x before 5.6.17, and 7.x before 7.0.2 allows remote attackers to obtain sensitive information or cause a denial of service (out-of-bounds read and application crash) via a large bgd_color argument to the imagerotate function.",
+            "fixVersions": {
+                "base": [
+                    "5.5.31",
+                    "5.6.17",
+                    "7.0.2"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-1904",
+            "summary": "Multiple integer overflows in ext\/standard\/exec.c in PHP 7.x before 7.0.2 allow remote attackers to cause a denial of service or possibly have unspecified other impact via a long string to the (1) php_escape_shell_cmd or (2) php_escape_shell_arg function, leading to a heap-based buffer overflow.",
+            "fixVersions": {
+                "base": [
+                    "7.0.2"
                 ]
             }
         }
