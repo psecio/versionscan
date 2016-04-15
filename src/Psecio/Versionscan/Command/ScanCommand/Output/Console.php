@@ -16,7 +16,12 @@ class Console extends Output
 
         $output->writeLn('Executing against version: ' . $phpVersion);
 
-        $table = $command->getHelper('table');
+        if (class_exists('\Symfony\Component\Console\Helper\Table')) {
+            $table = new \Symfony\Component\Console\Helper\Table($output);
+        } else {
+            $table = $command->getHelper('table');
+        }
+
         $table->setHeaders(array('Status', 'CVE ID', 'Risk', 'Summary'));
 
         $columnSize = 100;
