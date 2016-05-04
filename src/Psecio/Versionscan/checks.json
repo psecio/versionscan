@@ -5058,6 +5058,42 @@
             }
         },
         {
+            "threat": "7.5",
+            "cveid": "CVE-2015-3414",
+            "summary": "SQLite before 3.8.9 does not properly implement the dequoting of collation-sequence names, which allows context-dependent attackers to cause a denial of service (uninitialized memory access and application crash) or possibly have unspecified other impact via a crafted COLLATE clause, as demonstrated by COLLATE\"\"\"\"\"\"\"\" at the end of a SELECT statement. \n Publish Date : 2015-04-24 Last Update Date : 2015-10-09",
+            "fixVersions": {
+                "base": [
+                    "5.4.42",
+                    "5.5.26",
+                    "5.6.10"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-3415",
+            "summary": "The sqlite3VdbeExec function in vdbe.c in SQLite before 3.8.9 does not properly implement comparison operators, which allows context-dependent attackers to cause a denial of service (invalid free operation) or possibly have unspecified other impact via a crafted CHECK clause, as demonstrated by CHECK(0&O>O) in a CREATE TABLE statement. \n Publish Date : 2015-04-24 Last Update Date : 2015-10-09",
+            "fixVersions": {
+                "base": [
+                    "5.4.42",
+                    "5.5.26",
+                    "5.6.10"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2015-3416",
+            "summary": "The sqlite3VXPrintf function in printf.c in SQLite before 3.8.9 does not properly handle precision and width values during floating-point conversions, which allows context-dependent attackers to cause a denial of service (integer overflow and stack-based buffer overflow) or possibly have unspecified other impact via large integers in a crafted printf function call in a SELECT statement. \n Publish Date : 2015-04-24 Last Update Date : 2015-10-09",
+            "fixVersions": {
+                "base": [
+                    "5.4.42",
+                    "5.5.26",
+                    "5.6.10"
+                ]
+            }
+        },
+        {
             "threat": "5.0",
             "cveid": "CVE-2015-4021",
             "summary": "The phar_parse_tarfile function in ext\/phar\/tar.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 does not verify that the first character of a filename is different from the \\0 character, which allows remote attackers to cause a denial of service (integer underflow and memory corruption) via a crafted entry in a tar archive. \n Publish Date : 2015-06-09 Last Update Date : 2015-08-17",
@@ -5272,6 +5308,28 @@
             "fixVersions": {
                 "base": [
                     "7.0.2"
+                ]
+            }
+        },
+        {
+            "threat": "10.0",
+            "cveid": "CVE-2016-3141",
+            "summary": "Use-after-free vulnerability in wddx.c in the WDDX extension in PHP before 5.5.33 and 5.6.x before 5.6.19 allows remote attackers to cause a denial of service (memory corruption and application crash) or possibly have unspecified other impact by triggering a wddx_deserialize call on XML data containing a crafted var element. \n Publish Date : 2016-03-31 Last Update Date : 2016-03-31",
+            "fixVersions": {
+                "base": [
+                    "5.5.33",
+                    "5.6.19"
+                ]
+            }
+        },
+        {
+            "threat": "6.4",
+            "cveid": "CVE-2016-3142",
+            "summary": "The phar_parse_zipfile function in zip.c in the PHAR extension in PHP before 5.5.33 and 5.6.x before 5.6.19 allows remote attackers to obtain sensitive information from process memory or cause a denial of service (out-of-bounds read and application crash) by placing a PK\\x05\\x06 signature at an invalid location. \n Publish Date : 2016-03-31 Last Update Date : 2016-03-31",
+            "fixVersions": {
+                "base": [
+                    "5.5.33",
+                    "5.6.19"
                 ]
             }
         }
