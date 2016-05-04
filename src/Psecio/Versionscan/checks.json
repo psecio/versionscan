@@ -5082,6 +5082,18 @@
             }
         },
         {
+            "threat": "7.5",
+            "cveid": "CVE-2015-3416",
+            "summary": "The sqlite3VXPrintf function in printf.c in SQLite before 3.8.9 does not properly handle precision and width values during floating-point conversions, which allows context-dependent attackers to cause a denial of service (integer overflow and stack-based buffer overflow) or possibly have unspecified other impact via large integers in a crafted printf function call in a SELECT statement. \n Publish Date : 2015-04-24 Last Update Date : 2015-10-09",
+            "fixVersions": {
+                "base": [
+                    "5.4.42",
+                    "5.5.26",
+                    "5.6.10"
+                ]
+            }
+        },
+        {
             "threat": "5.0",
             "cveid": "CVE-2015-4021",
             "summary": "The phar_parse_tarfile function in ext\/phar\/tar.c in PHP before 5.4.41, 5.5.x before 5.5.25, and 5.6.x before 5.6.9 does not verify that the first character of a filename is different from the \\0 character, which allows remote attackers to cause a denial of service (integer underflow and memory corruption) via a crafted entry in a tar archive. \n Publish Date : 2015-06-09 Last Update Date : 2015-08-17",
