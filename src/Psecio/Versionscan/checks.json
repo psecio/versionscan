@@ -6394,6 +6394,108 @@
                     "7.0.11"
                 ]
             }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2016-7478",
+            "summary": "Zend\/zend_exceptions.c in PHP, possibly 5.x before 5.6.28 and 7.x before 7.0.13, allows remote attackers to cause a denial of service (infinite loop) via a crafted Exception object in serialized data, a related issue to CVE-2015-8876. \n Publish Date : 2017-01-11 Last Update Date : 2017-01-12",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.29",
+                    "5.4.46",
+                    "5.5.38",
+                    "5.6.28",
+                    "7.0.13"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-7479",
+            "summary": "In all versions of PHP 7, during the unserialization process, resizing the 'properties' hash table of a serialized object may lead to use-after-free. A remote attacker may exploit this bug to gain arbitrary code execution. \n Publish Date : 2017-01-11 Last Update Date : 2017-01-13",
+            "fixVersions": {
+                "base": [
+                    "7.0.15",
+                    "7.1.1"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-7480",
+            "summary": "The SplObjectStorage unserialize implementation in ext\/spl\/spl_observer.c in PHP before 7.0.12 does not verify that a key is an object, which allows remote attackers to execute arbitrary code or cause a denial of service (uninitialized memory access) via crafted serialized data. \n Publish Date : 2017-01-11 Last Update Date : 2017-01-12",
+            "fixVersions": {
+                "base": [
+                    "7.0.12"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-9137",
+            "summary": "Use-after-free vulnerability in the CURLFile implementation in ext\/curl\/curl_file.c in PHP before 5.6.27 and 7.x before 7.0.12 allows remote attackers to cause a denial of service or possibly have unspecified other impact via crafted serialized data that is mishandled during __wakeup processing. \n Publish Date : 2017-01-04 Last Update Date : 2017-01-10",
+            "fixVersions": {
+                "base": [
+                    "5.6.27",
+                    "7.0.12"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-9138",
+            "summary": "PHP through 5.6.27 and 7.x through 7.0.12 mishandles property modification during __wakeup processing, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via crafted serialized data, as demonstrated by Exception::__toString with DateInterval::__wakeup. \n Publish Date : 2017-01-04 Last Update Date : 2017-01-06",
+            "fixVersions": {
+                "base": [
+                    "5.6.28",
+                    "7.0.13"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2016-9934",
+            "summary": "ext\/wddx\/wddx.c in PHP before 5.6.28 and 7.x before 7.0.13 allows remote attackers to cause a denial of service (NULL pointer dereference) via crafted serialized data in a wddxPacket XML document, as demonstrated by a PDORow string. \n Publish Date : 2017-01-04 Last Update Date : 2017-01-17",
+            "fixVersions": {
+                "base": [
+                    "5.6.28",
+                    "7.0.13"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-9935",
+            "summary": "The php_wddx_push_element function in ext\/wddx\/wddx.c in PHP before 5.6.29 and 7.x before 7.0.14 allows remote attackers to cause a denial of service (out-of-bounds read and memory corruption) or possibly have unspecified other impact via an empty boolean element in a wddxPacket XML document. \n Publish Date : 2017-01-04 Last Update Date : 2017-01-17",
+            "fixVersions": {
+                "base": [
+                    "5.6.29",
+                    "7.0.14"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2016-9936",
+            "summary": "The unserialize implementation in ext\/standard\/var.c in PHP 7.x before 7.0.14 allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via crafted serialized data.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2015-6834. \n Publish Date : 2017-01-04 Last Update Date : 2017-01-17",
+            "fixVersions": {
+                "base": [
+                    "7.0.14"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2017-5340",
+            "summary": "Zend\/zend_hash.c in PHP before 7.0.15 and 7.1.x before 7.1.1 mishandles certain cases that require large array allocations, which allows remote attackers to execute arbitrary code or cause a denial of service (integer overflow, uninitialized memory access, and use of arbitrary destructor function pointers) via crafted serialized data. \n Publish Date : 2017-01-11 Last Update Date : 2017-01-12",
+            "fixVersions": {
+                "base": [
+                    "7.0.15"
+                ]
+            }
         }
     ]
 }
