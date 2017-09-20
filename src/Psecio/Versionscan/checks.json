@@ -6664,6 +6664,52 @@
             }
         },
         {
+            "threat": "6.8",
+            "cveid": "CVE-2017-11628",
+            "summary": "In PHP before 5.6.31, 7.x before 7.0.21, and 7.1.x before 7.1.7, a stack-based buffer overflow in the zend_ini_do_op() function in Zend\/zend_ini_parser.c could cause a denial of service or potentially allow executing code. NOTE: this is only relevant for PHP applications that accept untrusted input (instead of the system's php.ini file) for the parse_ini_string or parse_ini_file function, e.g., a web application for syntax validation of php.ini directives. \n Publish Date : 2017-07-25 Last Update Date : 2017-08-10",
+            "fixVersions": {
+                "base": [
+                    "5.6.31",
+                    "7.0.21",
+                    "7.1.7"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2017-12932",
+            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x through 7.0.22 and 7.1.x through 7.1.8 is prone to a heap use after free while unserializing untrusted data, related to improper use of the hash API for key deletion in a situation with an invalid array size. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-08-25",
+            "fixVersions": {
+                "base": [
+                    "7.0.23",
+                    "7.1.9"
+                ]
+            }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2017-12933",
+            "summary": "The finish_nested_data function in ext\/standard\/var_unserializer.re in PHP before 5.6.31, 7.0.x before 7.0.21, and 7.1.x before 7.1.7 is prone to a buffer over-read while unserializing untrusted data. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-09-19",
+            "fixVersions": {
+                "base": [
+                    "5.6.31",
+                    "7.0.21",
+                    "7.1.7"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2017-12934",
+            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x before 7.0.21 and 7.1.x before 7.1.7 is prone to a heap use after free while unserializing untrusted data, related to the zval_get_type function in Zend\/zend_types.h. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-08-25",
+            "fixVersions": {
+                "base": [
+                    "7.0.21",
+                    "7.1.7"
+                ]
+            }
+        },
+        {
             "threat": "7.5",
             "cveid": "CVE-2017-5340",
             "summary": "Zend\/zend_hash.c in PHP before 7.0.15 and 7.1.x before 7.1.1 mishandles certain cases that require large array allocations, which allows remote attackers to execute arbitrary code or cause a denial of service (integer overflow, uninitialized memory access, and use of arbitrary destructor function pointers) via crafted serialized data. \n Publish Date : 2017-01-11 Last Update Date : 2017-07-25",
@@ -6690,6 +6736,18 @@
             "fixVersions": {
                 "base": [
                     "7.1.4"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2017-7890",
+            "summary": "The GIF decoding function gdImageCreateFromGifCtx in gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.31 and 7.x before 7.1.7, does not zero colorMap arrays before use. A specially crafted GIF image could use the uninitialized tables to read ~700 bytes from the top of the stack, potentially disclosing sensitive information. \n Publish Date : 2017-08-02 Last Update Date : 2017-08-15",
+            "fixVersions": {
+                "base": [
+                    "5.6.31",
+                    "7.0.21",
+                    "7.1.7"
                 ]
             }
         },
