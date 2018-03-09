@@ -6873,6 +6873,32 @@
                     "7.1.6"
                 ]
             }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2018-5711",
+            "summary": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1, has an integer signedness error that leads to an infinite loop via a crafted GIF file, as demonstrated by a call to the imagecreatefromgif or imagecreatefromstring PHP function. This is related to GetCode_ and gdImageCreateFromGifCtx. \n Publish Date : 2018-01-16 Last Update Date : 2018-02-05",
+            "fixVersions": {
+                "base": [
+                    "5.6.33",
+                    "7.0.27",
+                    "7.1.13",
+                    "7.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2018-5712",
+            "summary": "An issue was discovered in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. There is Reflected XSS on the PHAR 404 error page via the URI of a request for a .phar file. \n Publish Date : 2018-01-16 Last Update Date : 2018-02-16",
+            "fixVersions": {
+                "base": [
+                    "5.6.33",
+                    "7.0.27",
+                    "7.1.13",
+                    "7.2.1"
+                ]
+            }
         }
     ]
 }
