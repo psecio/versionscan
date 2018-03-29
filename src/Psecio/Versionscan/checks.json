@@ -6899,6 +6899,23 @@
                     "7.2.1"
                 ]
             }
+        },
+        {
+            "threat": "7.5",
+            "cveid": "CVE-2018-7584",
+            "summary": "In PHP through 5.6.33, 7.0.x before 7.0.28, 7.1.x through 7.1.14, and 7.2.x through 7.2.2, there is a stack-based buffer under-read while parsing an HTTP response in the php_stream_url_wrap_http_ex function in ext\/standard\/http_fopen_wrapper.c. This subsequently results in copying a large string. \n Publish Date : 2018-03-01 Last Update Date : 2018-03-22",
+            "fixVersions": {
+                "base": [
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.5.39",
+                    "5.6.34",
+                    "7.0.28",
+                    "7.1.15",
+                    "7.2.3"
+                ]
+            }
         }
     ]
 }
