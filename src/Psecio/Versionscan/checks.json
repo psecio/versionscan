@@ -6915,6 +6915,71 @@
                     "7.2.3"
                 ]
             }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2018-10549",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. exif_read_data in ext/exif/exif.c has an out-of-bounds read for crafted JPEG data because exif_iif_add_value mishandles the case of a MakerNote that lacks a final '\\0' character.",
+            "fixVersions": {
+                "base": [
+                    "5.6.36",
+                    "7.0.30",
+                    "7.1.17",
+                    "7.2.5"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2018-10546",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. An infinite loop exists in ext/iconv/iconv.c because the iconv stream filter does not reject invalid multibyte sequences.",
+            "fixVersions": {
+                "base": [
+                    "5.6.36",
+                    "7.0.30",
+                    "7.1.17",
+                    "7.2.5"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2018-10547",
+            "summary": "An issue was discovered in ext/phar/phar_object.c in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. There is Reflected XSS on the PHAR 403 and 404 error pages via request data of a request for a .phar file. NOTE: this vulnerability exists because of an incomplete fix for CVE-2018-5712.",
+            "fixVersions": {
+                "base": [
+                    "5.6.36",
+                    "7.0.30",
+                    "7.1.17",
+                    "7.2.5"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2018-10545",
+            "summary": "An issue was discovered in PHP before 5.6.35, 7.0.x before 7.0.29, 7.1.x before 7.1.16, and 7.2.x before 7.2.4. Dumpable FPM child processes allow bypassing opcache access controls because fpm_unix.c makes a PR_SET_DUMPABLE prctl call, allowing one user (in a multiuser environment) to obtain sensitive information from the process memory of a second user's PHP applications by running gcore on the PID of the PHP-FPM worker process.",
+            "fixVersions": {
+                "base": [
+                    "5.6.35",
+                    "7.0.29",
+                    "7.1.16",
+                    "7.2.4"
+                ]
+            }
+        },
+        {
+            "threat": "0",
+            "cveid": "CVE-2018-10548",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. ext/ldap/ldap.c allows remote LDAP servers to cause a denial of service (NULL pointer dereference and application crash) because of mishandling of the ldap_get_dn return value.",
+            "fixVersions": {
+                "base": [
+                    "5.6.36",
+                    "7.0.30",
+                    "7.1.17",
+                    "7.2.5"
+                ]
+            }
         }
     ]
 }
