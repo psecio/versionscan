@@ -6980,6 +6980,113 @@
                     "7.2.5"
                 ]
             }
+       },
+	{
+            "threat": "7.5",
+            "cveid": "CVE-2018-12882",
+            "summary": "exif_read_from_impl in ext\/exif\/exif.c in PHP 7.2.x through 7.2.7 allows attackers to trigger a use-after-free (in exif_read_from_file) because it closes a stream that it is not responsible for closing. The vulnerable code is reachable through the PHP exif_read_data function. \n Publish Date : 2018-06-25 Last Update Date : 2018-11-10",
+            "fixVersions": {
+                "base": [
+                    "7.2.8"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2018-14851",
+            "summary": "exif_process_IFD_in_MAKERNOTE in ext\/exif\/exif.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted JPEG file. \n Publish Date : 2018-08-02 Last Update Date : 2018-11-08",
+            "fixVersions": {
+                "base": [
+                    "5.6.37",
+                    "7.0.31",
+                    "7.1.20",
+                    "7.2.8"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-14883",
+            "summary": "An issue was discovered in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. An Integer Overflow leads to a heap-based buffer over-read in exif_thumbnail_extract of exif.c. \n Publish Date : 2018-08-03 Last Update Date : 2018-11-08",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.4",
+                    "4.2.5",
+                    "4.3.12",
+                    "4.4.10",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.31",
+                    "7.1.20",
+                    "7.2.8"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-14884",
+            "summary": "An issue was discovered in PHP 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. Inappropriately parsing an HTTP response leads to a segmentation fault because http_header_value in ext\/standard\/http_fopen_wrapper.c can be a NULL value that is mishandled in an atoi call. \n Publish Date : 2018-08-03 Last Update Date : 2018-11-08",
+            "fixVersions": {
+                "base": [
+                    "7.0.27",
+                    "7.1.13",
+                    "7.2.1"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-15132",
+            "summary": "An issue was discovered in ext\/standard\/link_win32.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. The linkinfo function on Windows doesn't implement the open_basedir check. This could be abused to find files on paths outside of the allowed directories. \n Publish Date : 2018-08-07 Last Update Date : 2018-11-08",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.4",
+                    "4.2.5",
+                    "4.3.12",
+                    "4.4.10",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.31",
+                    "7.1.20",
+                    "7.2.8"
+                ]
+            }
+        },
+        {
+            "threat": "4.3",
+            "cveid": "CVE-2018-17082",
+            "summary": "The Apache2 component in PHP before 5.6.38, 7.0.x before 7.0.32, 7.1.x before 7.1.22, and 7.2.x before 7.2.10 allows XSS via the body of a \"Transfer-Encoding: chunked\" request, because the bucket brigade is mishandled in the php_handler function in sapi\/apache2handler\/sapi_apache2.c. \n Publish Date : 2018-09-16 Last Update Date : 2018-12-03",
+            "fixVersions": {
+                "base": [
+                    "4.0.8",
+                    "4.1.4",
+                    "4.2.5",
+                    "4.3.12",
+                    "4.4.10",
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.32",
+                    "7.1.22",
+                    "7.2.10"
+                ]
+            }
         }
     ]
 }
