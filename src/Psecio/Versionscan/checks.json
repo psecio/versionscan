@@ -6820,7 +6820,7 @@
         {
             "threat": "7.5",
             "cveid": "CVE-2017-12932",
-            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x through 7.0.22 and 7.1.x through 7.1.8 is prone to a heap use after free while unserializing untrusted data, related to improper use of the hash API for key deletion in a situation with an invalid array size. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-08-25",
+            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x through 7.0.22 and 7.1.x through 7.1.8 is prone to a heap use after free while unserializing untrusted data, related to improper use of the hash API for key deletion in a situation with an invalid array size. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2018-05-03",
             "fixVersions": {
                 "base": [
                     "7.0.23",
@@ -6831,7 +6831,7 @@
         {
             "threat": "7.5",
             "cveid": "CVE-2017-12933",
-            "summary": "The finish_nested_data function in ext\/standard\/var_unserializer.re in PHP before 5.6.31, 7.0.x before 7.0.21, and 7.1.x before 7.1.7 is prone to a buffer over-read while unserializing untrusted data. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-09-19",
+            "summary": "The finish_nested_data function in ext\/standard\/var_unserializer.re in PHP before 5.6.31, 7.0.x before 7.0.21, and 7.1.x before 7.1.7 is prone to a buffer over-read while unserializing untrusted data. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2018-05-03",
             "fixVersions": {
                 "base": [
                     "5.6.31",
@@ -6843,7 +6843,7 @@
         {
             "threat": "5.0",
             "cveid": "CVE-2017-12934",
-            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x before 7.0.21 and 7.1.x before 7.1.7 is prone to a heap use after free while unserializing untrusted data, related to the zval_get_type function in Zend\/zend_types.h. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2017-08-25",
+            "summary": "ext\/standard\/var_unserializer.re in PHP 7.0.x before 7.0.21 and 7.1.x before 7.1.7 is prone to a heap use after free while unserializing untrusted data, related to the zval_get_type function in Zend\/zend_types.h. Exploitation of this issue can have an unspecified impact on the integrity of PHP. \n Publish Date : 2017-08-17 Last Update Date : 2018-05-03",
             "fixVersions": {
                 "base": [
                     "7.0.21",
@@ -6854,7 +6854,7 @@
         {
             "threat": "5.0",
             "cveid": "CVE-2017-16642",
-            "summary": "In PHP before 5.6.32, 7.x before 7.0.25, and 7.1.x before 7.1.11, an error in the date extension's timelib_meridian handling of 'front of' and 'back of' directives could be used by attackers able to supply date strings to leak information from the interpreter, related to ext\/date\/lib\/parse_date.c out-of-bounds reads affecting the php_parse_date function. NOTE: this is a different issue than CVE-2017-11145. \n Publish Date : 2017-11-07 Last Update Date : 2017-11-29",
+            "summary": "In PHP before 5.6.32, 7.x before 7.0.25, and 7.1.x before 7.1.11, an error in the date extension's timelib_meridian handling of 'front of' and 'back of' directives could be used by attackers able to supply date strings to leak information from the interpreter, related to ext\/date\/lib\/parse_date.c out-of-bounds reads affecting the php_parse_date function. NOTE: this is a different issue than CVE-2017-11145. \n Publish Date : 2017-11-07 Last Update Date : 2018-11-24",
             "fixVersions": {
                 "base": [
                     "4.0.8",
@@ -6877,7 +6877,7 @@
         {
             "threat": "4.3",
             "cveid": "CVE-2018-5711",
-            "summary": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1, has an integer signedness error that leads to an infinite loop via a crafted GIF file, as demonstrated by a call to the imagecreatefromgif or imagecreatefromstring PHP function. This is related to GetCode_ and gdImageCreateFromGifCtx. \n Publish Date : 2018-01-16 Last Update Date : 2018-02-05",
+            "summary": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1, has an integer signedness error that leads to an infinite loop via a crafted GIF file, as demonstrated by a call to the imagecreatefromgif or imagecreatefromstring PHP function. This is related to GetCode_ and gdImageCreateFromGifCtx. \n Publish Date : 2018-01-16 Last Update Date : 2018-08-28",
             "fixVersions": {
                 "base": [
                     "5.6.33",
@@ -6890,7 +6890,7 @@
         {
             "threat": "4.3",
             "cveid": "CVE-2018-5712",
-            "summary": "An issue was discovered in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. There is Reflected XSS on the PHAR 404 error page via the URI of a request for a .phar file. \n Publish Date : 2018-01-16 Last Update Date : 2018-02-16",
+            "summary": "An issue was discovered in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1. There is Reflected XSS on the PHAR 404 error page via the URI of a request for a .phar file. \n Publish Date : 2018-01-16 Last Update Date : 2018-05-16",
             "fixVersions": {
                 "base": [
                     "5.6.33",
@@ -6903,7 +6903,7 @@
         {
             "threat": "7.5",
             "cveid": "CVE-2018-7584",
-            "summary": "In PHP through 5.6.33, 7.0.x before 7.0.28, 7.1.x through 7.1.14, and 7.2.x through 7.2.2, there is a stack-based buffer under-read while parsing an HTTP response in the php_stream_url_wrap_http_ex function in ext\/standard\/http_fopen_wrapper.c. This subsequently results in copying a large string. \n Publish Date : 2018-03-01 Last Update Date : 2018-03-22",
+            "summary": "In PHP through 5.6.33, 7.0.x before 7.0.28, 7.1.x through 7.1.14, and 7.2.x through 7.2.2, there is a stack-based buffer under-read while parsing an HTTP response in the php_stream_url_wrap_http_ex function in ext\/standard\/http_fopen_wrapper.c. This subsequently results in copying a large string. \n Publish Date : 2018-03-01 Last Update Date : 2018-09-19",
             "fixVersions": {
                 "base": [
                     "5.3.30",
@@ -6917,9 +6917,9 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "1.9",
             "cveid": "CVE-2018-10545",
-            "summary": "An issue was discovered in PHP before 5.6.35, 7.0.x before 7.0.29, 7.1.x before 7.1.16, and 7.2.x before 7.2.4. Dumpable FPM child processes allow bypassing opcache access controls because fpm_unix.c makes a PR_SET_DUMPABLE prctl call, allowing one user (in a multiuser environment) to obtain sensitive information from the process memory of a second user's PHP applications by running gcore on the PID of the PHP-FPM worker process.",
+            "summary": "An issue was discovered in PHP before 5.6.35, 7.0.x before 7.0.29, 7.1.x before 7.1.16, and 7.2.x before 7.2.4. Dumpable FPM child processes allow bypassing opcache access controls because fpm_unix.c makes a PR_SET_DUMPABLE prctl call, allowing one user (in a multiuser environment) to obtain sensitive information from the process memory of a second user's PHP applications by running gcore on the PID of the PHP-FPM worker process. \n Publish Date : 2018-04-29 Last Update Date : 2018-12-03",
             "fixVersions": {
                 "base": [
                     "5.6.35",
@@ -6930,9 +6930,9 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "5.0",
             "cveid": "CVE-2018-10546",
-            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. An infinite loop exists in ext/iconv/iconv.c because the iconv stream filter does not reject invalid multibyte sequences.",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. An infinite loop exists in ext\/iconv\/iconv.c because the iconv stream filter does not reject invalid multibyte sequences. \n Publish Date : 2018-04-29 Last Update Date : 2018-12-03",
             "fixVersions": {
                 "base": [
                     "5.6.36",
@@ -6943,7 +6943,7 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "4.3",
             "cveid": "CVE-2018-10547",
             "summary": "An issue was discovered in ext/phar/phar_object.c in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. There is Reflected XSS on the PHAR 403 and 404 error pages via request data of a request for a .phar file. NOTE: this vulnerability exists because of an incomplete fix for CVE-2018-5712.",
             "fixVersions": {
@@ -6956,9 +6956,9 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "5.0",
             "cveid": "CVE-2018-10548",
-            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. ext/ldap/ldap.c allows remote LDAP servers to cause a denial of service (NULL pointer dereference and application crash) because of mishandling of the ldap_get_dn return value.",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. ext\/ldap\/ldap.c allows remote LDAP servers to cause a denial of service (NULL pointer dereference and application crash) because of mishandling of the ldap_get_dn return value. \n Publish Date : 2018-04-29 Last Update Date : 2018-12-03",
             "fixVersions": {
                 "base": [
                     "5.6.36",
@@ -6969,9 +6969,9 @@
             }
         },
         {
-            "threat": "0",
+            "threat": "6.8",
             "cveid": "CVE-2018-10549",
-            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. exif_read_data in ext/exif/exif.c has an out-of-bounds read for crafted JPEG data because exif_iif_add_value mishandles the case of a MakerNote that lacks a final '\\0' character.",
+            "summary": "An issue was discovered in PHP before 5.6.36, 7.0.x before 7.0.30, 7.1.x before 7.1.17, and 7.2.x before 7.2.5. exif_read_data in ext\/exif\/exif.c has an out-of-bounds read for crafted JPEG data because exif_iif_add_value mishandles the case of a MakerNote that lacks a final '\\0' character. \n Publish Date : 2018-04-29 Last Update Date : 2018-12-03",
             "fixVersions": {
                 "base": [
                     "5.6.36",
@@ -6994,7 +6994,7 @@
         {
             "threat": "4.3",
             "cveid": "CVE-2018-14851",
-            "summary": "exif_process_IFD_in_MAKERNOTE in ext\/exif\/exif.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted JPEG file. \n Publish Date : 2018-08-02 Last Update Date : 2018-11-08",
+            "summary": "exif_process_IFD_in_MAKERNOTE in ext\/exif\/exif.c in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via a crafted JPEG file. \n Publish Date : 2018-08-02 Last Update Date : 2018-12-11",
             "fixVersions": {
                 "base": [
                     "5.6.37",
@@ -7007,7 +7007,7 @@
         {
             "threat": "5.0",
             "cveid": "CVE-2018-14883",
-            "summary": "An issue was discovered in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. An Integer Overflow leads to a heap-based buffer over-read in exif_thumbnail_extract of exif.c. \n Publish Date : 2018-08-03 Last Update Date : 2018-11-08",
+            "summary": "An issue was discovered in PHP before 5.6.37, 7.0.x before 7.0.31, 7.1.x before 7.1.20, and 7.2.x before 7.2.8. An Integer Overflow leads to a heap-based buffer over-read in exif_thumbnail_extract of exif.c. \n Publish Date : 2018-08-03 Last Update Date : 2018-12-11",
             "fixVersions": {
                 "base": [
                     "4.0.8",
@@ -7067,7 +7067,7 @@
         {
             "threat": "4.3",
             "cveid": "CVE-2018-17082",
-            "summary": "The Apache2 component in PHP before 5.6.38, 7.0.x before 7.0.32, 7.1.x before 7.1.22, and 7.2.x before 7.2.10 allows XSS via the body of a \"Transfer-Encoding: chunked\" request, because the bucket brigade is mishandled in the php_handler function in sapi\/apache2handler\/sapi_apache2.c. \n Publish Date : 2018-09-16 Last Update Date : 2018-12-03",
+            "summary": "The Apache2 component in PHP before 5.6.38, 7.0.x before 7.0.32, 7.1.x before 7.1.22, and 7.2.x before 7.2.10 allows XSS via the body of a \"Transfer-Encoding: chunked\" request, because the bucket brigade is mishandled in the php_handler function in sapi\/apache2handler\/sapi_apache2.c. \n Publish Date : 2018-09-16 Last Update Date : 2018-12-11",
             "fixVersions": {
                 "base": [
                     "4.0.8",
@@ -7085,6 +7085,61 @@
                     "7.0.32",
                     "7.1.22",
                     "7.2.10"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-19395",
+            "summary": "ext\/standard\/var.c in PHP 5.x through 7.1.24 on Windows allows attackers to cause a denial of service (NULL pointer dereference and application crash) because com and com_safearray_proxy return NULL in com_properties_get in ext\/com_dotnet\/com_handlers.c, as demonstrated by a serialize call on COM(\"WScript.Shell\"). \n Publish Date : 2018-11-20 Last Update Date : 2018-12-27",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.32",
+                    "7.1.25"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-19396",
+            "summary": "ext\/standard\/var_unserializer.c in PHP 5.x through 7.1.24 allows attackers to cause a denial of service (application crash) via an unserialize call for the com, dotnet, or variant class. \n Publish Date : 2018-11-20 Last Update Date : 2019-01-02",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.32",
+                    "7.1.25"
+                ]
+            }
+        },
+        {
+            "threat": "5.0",
+            "cveid": "CVE-2018-19935",
+            "summary": "ext\/imap\/php_imap.c in PHP 5.x and 7.x before 7.3.0 allows remote attackers to cause a denial of service (NULL pointer dereference and application crash) via an empty string in the message argument to the imap_mail function. \n Publish Date : 2018-12-07 Last Update Date : 2018-12-31",
+            "fixVersions": {
+                "base": [
+                    "5.0.6",
+                    "5.1.7",
+                    "5.2.18",
+                    "5.3.30",
+                    "5.4.46",
+                    "5.5.39",
+                    "5.6.37",
+                    "7.0.32",
+                    "7.1.23",
+                    "7.2.11"
                 ]
             }
         }
