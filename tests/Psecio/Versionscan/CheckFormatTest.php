@@ -42,7 +42,7 @@ class CheckFormatTest extends \PHPUnit_Framework_TestCase
     {
         $ids = $this->reduceArrayToCveList();
         $sortedIds = $ids;
-        sort($sortedIds);
+        natsort($sortedIds);
 
         $this->assertSame($sortedIds, $ids, 'Checks should be sorted by their CVE ID');
     }
@@ -51,7 +51,7 @@ class CheckFormatTest extends \PHPUnit_Framework_TestCase
     {
         $ids = $this->reduceArrayToCveList();
         $duplicates = array_unique(array_diff_assoc($ids, array_unique($ids)));
-        sort($duplicates);
+        natsort($duplicates);
         $this->assertEquals(0, count($duplicates), "Duplicate CVE IDs were found:\n - " . implode("\n - ", $duplicates));
     }
 
