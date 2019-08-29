@@ -39,7 +39,7 @@ class MissingCommand extends Command
         $saveResults = $input->getOption('save-results');
 
         // Get our current checks
-        $this->checksFileContents = json_decode(file_get_contents(__DIR__.'/../../../Psecio/Versionscan/checks.json'), true);
+        $this->checksFileContents = json_decode(file_get_contents($this->checksFilePath), true);
         $this->checksList = [];
         foreach ($this->checksFileContents['checks'] as $check) {
             if (!in_array($check['cveid'], $this->checksList)) {
