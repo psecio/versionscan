@@ -167,6 +167,13 @@ class MissingCommand extends Command
             }
             return strnatcmp($row1Parts[2], $row2Parts[2]);
         });
+
+        foreach ($allChecks as $index => $check) {
+            $versions = $allChecks[$index]['fixVersions']['base'];
+            sort($versions);
+            $allChecks[$index]['fixVersions']['base'] = $versions;
+        }
+
         $output = [
             'checks' => $allChecks,
             'updatedAt' => Date('c')
