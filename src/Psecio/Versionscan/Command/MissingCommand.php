@@ -5,19 +5,21 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Psecio\Versionscan\Exceptions\FormatNotFoundException;
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 
 class MissingCommand extends Command
 {
     private $verbose = false;
+    private $checksFilePath;
+    private $checksFileContents;
+    private $checksList;
 
     protected function configure()
     {
         $this->setName('missing')
             ->setDescription('Find vulnerabilities missing from current checks')
             ->setDefinition(array(
-                // new InputOption('php-version', 'php-version', InputOption::VALUE_OPTIONAL, 'PHP version to check'),
+                new InputOption('save-results', 'save-results', InputOption::VALUE_OPTIONAL, 'Save missing vulnerabilities to the checks list'),
             ))
             ->setHelp(
                 'Find vulnerabilities missing from current checks'
@@ -33,23 +35,46 @@ class MissingCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->verbose = $input->getOption('verbose');
-        $changelog = file_get_contents('http://php.net/ChangeLog-5.php');
+        $this->checksFilePath = __DIR__ . '/../../../Psecio/Versionscan/checks.json';
+        $saveResults = $input->getOption('save-results');
 
         // Get our current checks
-        $json = json_decode(file_get_contents(__DIR__.'/../../../Psecio/Versionscan/checks.json'));
-        $checksList = [];
-        foreach ($json->checks as $check) {
-            if (!in_array($check->cveid, $checksList)) {
-                $checksList[] = $check->cveid;
+        $this->checksFileContents = json_decode(file_get_contents(__DIR__.'/../../../Psecio/Versionscan/checks.json'), true);
+        $this->checksList = [];
+        foreach ($this->checksFileContents['checks'] as $check) {
+            if (!in_array($check['cveid'], $this->checksList)) {
+                $this->checksList[] = $check['cveid'];
             }
         }
 
+        $v5Results = $this->parseChangeLog(file_get_contents('http://php.net/ChangeLog-5.php'), $output);
+        $v7Results = $this->parseChangeLog(file_get_contents('http://php.net/ChangeLog-7.php'), $output);
+
+        $fixVersions = array_merge($v5Results, $v7Results);
+
+        if (empty($fixVersions)) {
+            $output->writeLn('No missing versions/CVEs detected');
+        } else {
+            $jsonOutput = json_encode(array_values($fixVersions), JSON_PRETTY_PRINT);
+            echo $jsonOutput."\n\n";
+        }
+
+        if ($this->verbose === true) {
+            $output->writeLn('Missing records found: '.count($fixVersions));
+        }
+
+        if ($saveResults !== false) {
+            $this->saveResults($fixVersions);
+        }
+    }
+
+    private function parseChangeLog($changelog, $output)
+    {
         // Parse the changelog into versions
         preg_match_all('#<section class="version" id="([0-9\.]+)">(.+?)</section>#ms', $changelog, $matches);
 
         $cveIdList = [];
         $fixVersions = [];
-        $results = [];
 
         // print_r($matches);
         foreach ($matches[0] as $index => $match) {
@@ -68,7 +93,7 @@ class MissingCommand extends Command
 
             // print_r($cveList);
             foreach ($cveList[0] as $cveId) {
-                if (in_array($cveId, $checksList) === true) {
+                if (in_array($cveId, $this->checksList) === true) {
                     continue;
                 }
 
@@ -97,16 +122,7 @@ class MissingCommand extends Command
             }
         }
 
-        if (empty($fixVersions)) {
-            $output->writeLn('No missing versions/CVEs detected');
-        } else {
-            $jsonOutput = json_encode(array_values($fixVersions), JSON_PRETTY_PRINT);
-            echo $jsonOutput."\n\n";
-        }
-
-        if ($this->verbose === true) {
-            $output->writeLn('Missing records found: '.count($fixVersions));
-        }
+        return $fixVersions;
     }
 
     private function getCveDetail($cveId, $output)
@@ -137,5 +153,26 @@ class MissingCommand extends Command
         }
 
         return $cveDetail;
+    }
+
+    private function saveResults($newChecks)
+    {
+        $allChecks = array_merge($this->checksFileContents['checks'], $newChecks);
+
+        usort($allChecks, function($row1, $row2) {
+            $row1Parts = explode('-', $row1['cveid']);
+            $row2Parts = explode('-', $row2['cveid']);
+            if ($row1Parts[1] != $row2Parts[1]) {
+                return strnatcmp($row1Parts[1], $row2Parts[1]);
+            }
+            return strnatcmp($row1Parts[2], $row2Parts[2]);
+        });
+        $output = [
+            'checks' => $allChecks,
+            'updatedAt' => Date('c')
+        ];
+
+        $json_data = json_encode($output, JSON_PRETTY_PRINT);
+        file_put_contents($this->checksFilePath, $json_data);
     }
 }
