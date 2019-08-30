@@ -7450,10 +7450,11 @@
             "summary": "A use-after-free in onig_new_deluxe() in regext.c in Oniguruma 6.9.2 allows attackers to potentially cause information disclosure, denial of service, or possibly code execution by providing a crafted regular expression. The attacker provides a pair of a regex pattern and a string, with a multi-byte encoding that gets handled by onig_new_deluxe(). Oniguruma issues often affect Ruby, as well as common optional libraries for PHP and Rust.",
             "fixVersions": {
                 "base": [
+                    "7.1.32",
                     "7.3.9"
                 ]
             }
         }
     ],
-    "updatedAt": "2019-08-29T17:16:23+00:00"
+    "updatedAt": "2019-08-30T16:14:47+00:00"
 }
