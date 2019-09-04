@@ -14,8 +14,9 @@ class CheckFormatTest extends \PHPUnit_Framework_TestCase
 
     public function testEverythingIsUnderTheChecksKey()
     {
-        $this->assertCount(1, $this->checks);
+        $this->assertCount(2, $this->checks);
         $this->assertArrayHasKey('checks', $this->checks);
+        $this->assertArrayHasKey('updatedAt', $this->checks);
     }
 
     public function testStructureOfEachEntry()
