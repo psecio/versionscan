@@ -7445,9 +7445,9 @@
             }
         },
         {
-            "threat": "",
+            "threat": "9.8",
             "cveid": "CVE-2019-11043",
-            "summary": "",
+            "summary": "In PHP versions 7.1.x below 7.1.33, 7.2.x below 7.2.24 and 7.3.x below 7.3.11 in certain configurations of FPM setup it is possible to cause FPM module to write past allocated buffers into the space reserved for FCGI protocol data, thus opening the possibility of remote code execution.",
             "fixVersions": {
                 "base": [
                     "7.1.33",
